@@ -9,7 +9,6 @@ questions:
 objectives:
 - "Install Docker on your computer"
 - "Learn how to add remove and commit changes to github repo"
-- 
 keypoints:
 - Git is a version control tool that allows you to keep track of your work
 - Github is a cloud platform where you can share, view and organize your collaborations
