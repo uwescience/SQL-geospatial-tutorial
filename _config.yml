@@ -7,14 +7,14 @@ encoding: utf-8
 kind: "lesson"
 
 # Overall title for pages.
-title: "Introductory Material"
+title: "HiMAT data tutorial"
 
 # Repository URL (without trailing slash).
-repo: https://github.com/geohackweek/Introductory
+repo: https://github.com/geohackweek/himat-data
 
 # Root URL below username.github.io domain, with leading slash but no trailing slash.
 # For example, for 'https://geohackweek.github.io/lesson-example', use '/lesson-example'.
-root: "/Introductory"
+root: "/himat-data"
 
 # Contact email address.
 email: arendta@uw.edu

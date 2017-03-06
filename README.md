@@ -1,6 +1,6 @@
-# Introductory material for geohackweek
+# Tutorial for HiMAT data access
 
-These are files to build a github website hosting the [geohackweek](https://geohackweek.github.io/) introductory [tutorial](https://geohackweek.github.io/Introductory). Github automatically renders these files using Ruby to build the website.
+This is a series of tutorials on how to access data associated with the NASA High Mountain Asia project.
 
-Pull-requests to expand on our tutorial content are encouraged. Changes can be made to the markdown files located in the [episodes folder](https://github.com/geohackweek/nDarrays/tree/gh-pages/_episodes)
+Pull-requests to expand on our tutorial content are encouraged. Changes can be made to the markdown files located in the [episodes folder](https://github.com/geohackweek/himat-data/tree/gh-pages/_episodes)
 
