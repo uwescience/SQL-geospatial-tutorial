@@ -21,7 +21,10 @@ key points:
 
 ## Overview
 
-![conceptual map](../fig/himatDataDiagram.png)
+<br>
+<img src="../fig/himatDataDiagram.png" width = "800" border = "10">
+<br>
+
 
 <!---
 https://github.com/aaarendt/2016-11-29-HiMAT/blob/gh-pages/files/read_nc.ipynb
