@@ -57,7 +57,7 @@ Common formats for storing these datasets include geotiffs, netCDF and HDF5. For
 
 ### Vector Data
 
-Vector is a term commonly used in Geographical Information Systems (GIS) to refer to discrete geometric entities (also referred to as objects, features or shapes) that represent or approximate distinct “things” in space. [Vector data models](https://geohackweek.github.io/vector/02-geospatial-concepts/) include point, line and polygon features. 
+Vector is a term commonly used in Geographical Information Systems (GIS) to refer to discrete geometric entities (also referred to as objects, features or shapes) that represent or approximate distinct "things" in space. [Vector data models](https://geohackweek.github.io/vector/02-geospatial-concepts/) include point, line and polygon features. 
 
 There are [many different ways](https://geohackweek.github.io/vector/03-encodings-libraries/) to encode vector data. For HiMAT we encourage the use of open-source formats such as GeoJSON.
 
