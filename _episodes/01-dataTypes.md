@@ -13,9 +13,7 @@ keypoints:
 - "Usage of various HiMAT resources will vary depending on the type of data being analyzed"
 ---
 
-## Data Types
-
-In general there are two primary types of geospatial data models, raster and vector. Raster data are used to represent continually varying fields while vector data represent discrete objects in space.
+The location and method by which we store data for HiMAT depends to a large extent on the type and size of the dataset. In general there are two primary types of geospatial data models, raster and vector. Raster data are used to represent continually varying fields while vector data represent discrete objects in space.
 
 <br>
 <img src="../fig/dataModels.png" width = "600" border = "10">
@@ -36,5 +34,10 @@ Vector is a term commonly used in Geographical Information Systems (GIS) to refe
 There are [many different ways](https://geohackweek.github.io/vector/03-encodings-libraries/) to encode vector data. For HiMAT we encourage the use of open-source formats such as GeoJSON.
 
 Example datasets will include vector polygons representing glacier locations, points representing HMA weather stations and lines representing stream locations.
+
+### Tabular Data
+
+All other non-geospatially encoded data will be represented in tabular (row/column) format. Simple machine-independent formats are recommended, such as comma-separated-values.
+
 
 

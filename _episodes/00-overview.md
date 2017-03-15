@@ -5,8 +5,8 @@ teaching: 15
 exercises: 0
 questions:
 - "What is the purpose of having a HiMAT data infrastructure?"
-- "What methods are in place to ensure my data are safe?"
 - "What kinds of support and services can I expect from each of the different data coordinators?"
+- "What methods are in place to ensure my data are safe?"
 objectives:
 - "Learn about the overall architecture of the HiMAT infrastructure"
 key points:
@@ -39,4 +39,10 @@ There are explicit resources provided to help support adpotion and use of the Hi
 * PI Arendt's team (Fatland, Setiawan, Shean) provides assistance with data sharing using Amazon Web Services/geoserver, and access to NGA data on ADAPT
 * NSIDC (Raup) provides assistance with data ingest and sharing on the GLIMS database
 
+## Data security
 
+Many groups will produce preliminary datasets that may not be ready for distribution outside of HiMAT. The following practices will help us ensure data products are secure:
+
+* all datasets on ADAPT shared directories can only be read by those who have passed through the stringent NASA secuirty protocols. Only administrators of ADAPT can write to these directories. Each individual user has home directories that only they can access.
+* the commercial cloud (e.g. Amazon Web Services) is extremely secure, providing HIPAA-aligned techonlogies. [UW-IT](https://cloudmaven.github.io/documentation/cc_data_security.html#access-control) is committed to implementing these technologies in its provisioning of data resources for HiMAT
+  
