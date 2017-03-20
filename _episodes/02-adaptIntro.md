@@ -71,7 +71,7 @@ Once you have successfully entered your credentials you will see a few lines of 
 And your command prompt will now look like this:
 
 ~~~
-\[<userID>@ngalogin02 ~\] $
+[<userID>@ngalogin02 ~] $
 ~~~
 {: .bash}
 

@@ -19,7 +19,7 @@ keypoints:
 You should be at a command prompt within ADAPT (last lesson). Next, SSH to one of the 15 himat VMs:
 
 ~~~
-\[aarendt@ngalogin02 ~\] $ ssh himat101
+[aarendt@ngalogin02 ~] $ ssh himat101
 ~~~
 {: .bash}
 
