@@ -26,7 +26,14 @@ All HiMAT researchers have an opportunity to access these ADAPT resources. Team 
 
 ## HiMAT ADAPT Architecture
 
-ADAPT is a [managed Virtual Machine](https://www.nccs.nasa.gov/services/adapt/capabilities) (VM) environment. Each user who is given access to ADAPT also gains access to a series of VMs, each running autonomously and dedicated to a specific project. For the HiMAT project we have provisioned approximately 15 Virtual Machines (VMs) for our work. These are labeled "himat101, himat102,..." etc. Each of these VMs is identical to the other. The reason we have multiple VMs is you can switch between them if one is being used by another team. There are monitoring resources available to assess the health of each VM through time.
+ADAPT is a [managed Virtual Machine](https://www.nccs.nasa.gov/services/adapt/capabilities) (VM) environment. Each user who is given access to ADAPT also gains access to a series of VMs, each running autonomously and dedicated to a specific project. For the HiMAT project we have provisioned approximately 15 Virtual Machines (VMs) for our work. These are labeled "himat101, himat102,..." etc. Each of these VMs is identical to the other. The reason we have multiple VMs is you can switch between them if one is being used by another team. 
+
+> ## How do I decide which VM to use?
+>
+> Occasionally other users may be running large jobs on certain himat VMs, so you will want to select one that is not being used. You can 
+> figure this out by accessing the NASA ["ganglia"](https://www.nccs.nasa.gov/internal/monitoring/dsc/ganglia-test/) page, which presents 
+> series of graphs showing CPU and memory usage (you will need to enter your credentials again).
+{: .callout}
 
 All HiMAT users operate from their own dedicated home directory. This is a location where you can custom install software to meet your own particular needs. You can also store files here temporarily. 
 
