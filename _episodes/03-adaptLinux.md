@@ -4,8 +4,8 @@ title: "NASA ADAPT: Linux VM"
 teaching: 15
 exercises: 0
 questions:
-- ""
-- "What are the advantages of using geoserver?"
+- "How do I initiate a Linux VM session on ADAPT?"
+- "What folders "
 objectives:
 - "Learn how to directly access vector data from the geoserver portal"
 - "Practice accessing data layers from geoserver directly through QGIS"
@@ -32,19 +32,24 @@ aarendt@himat101:~$
 ~~~
 {: .bash}
 
-## 
-
 ## ADAPT Datasets
 
 ADAPT provides HiMAT with direct access to the full Landsat, MODIS and MERRA [data sets](https://www.nccs.nasa.gov/services/adapt/data). You can view these datasets by typing:
 
 ~~~
 aarendt@himat101:~$ ls /att/pubrepo
-ABoVE\_products  LANDSAT  misc\_products  NGA             obsolete
-DEM             MERRA    MODIS          NGA\_footprints
-hma\_data        MERRA2   new\_NGA        NGA\_Incoming
 ~~~
 {: .bash}
+
+You'll see this list of folders:
+
+~~~
+ABoVE_products  LANDSAT  misc_products  NGA             obsolete
+DEM             MERRA    MODIS          NGA_footprints
+hma_data        MERRA2   new_NGA        NGA_Incoming
+~~~
+{: .bash}
+
 
 As team members generate new products, we will be hosting these in a file structure similar to that used for the existing NASA remote sensing and climate reanalysis datasets. 
 
