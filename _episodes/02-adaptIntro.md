@@ -1,6 +1,6 @@
 ---
 
-title: "NASA ADAPT Intro"
+title: "NASA ADAPT: Overview"
 teaching: 20
 exercises: 0
 questions:
@@ -51,9 +51,31 @@ Establishing an SSH connection requires typing your various credentials into a t
 * for MAC or Linux users: simply pull up a terminal prompt
 * for Windows users: download [MobaXterm](http://mobaxterm.mobatek.net/), a software that enables SSH terminal access from Windows
 
-Now, login to ADAPT following [these steps](https://www.nccs.nasa.gov/services/adapt/how_to_use_adapt/logging_into_adapt).
+From your terminal prompt, login to ADAPT:
 
-For new users, this step can be initially confusing. Once passing through these initial security requests it will seem that you are now "in" to ADAPT and ready to work. But really you are just through the first layer of security, sitting on the bastion server, from which you now must to make another secure connection to the VM environment where you will your work.
+~~~
+$ ssh -X <userID>@ngalogin.nccs.nasa.gov
+~~~
+{: .bash}
+
+The "-X" option is needed later if you use any of the Graphical User Interfaces offered by ADAPT. 
+
+Continue following [these steps](https://www.nccs.nasa.gov/services/adapt/how_to_use_adapt/logging_into_adapt).
+
+Once you have successfully entered your credentials you will see a few lines of text like this:
+ 
+<br>
+<img src="../fig/sshBastion.png" width = "400" border = "10">
+<br>
+
+And your command prompt will now look like this:
+
+~~~
+\[<userID>@ngalogin02 ~\] $
+~~~
+{: .bash}
+
+For new users, this step can be initially confusing. Once passing through these initial security requests it will seem that you are now "in" to ADAPT and ready to work. But really you are just through the first layer of security, sitting on the ngalogin server, from which you now must to make another secure connection to the VM environment where you will your work.
 
 So the next step is to SSH yet again to the VM environment, in our case one of the himat101, etc. VMs. This is were our paths can diverge, because ADAPT offers both a Linux and Windows operating system environment. The next two lessons will explore the Linux and Windows VMs.
 
