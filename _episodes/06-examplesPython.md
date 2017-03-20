@@ -52,7 +52,7 @@ ds
 
 ~~~
 <xarray.Dataset>
-Dimensions:  (lat: 361, lon: 576, time: 744)
+Dimensions:  (lat: 361, lon: 576, time: 24)
 Coordinates:
   * lon      (lon) float64 -180.0 -179.4 -178.8 -178.1 -177.5 -176.9 -176.2 ...
   * lat      (lat) float64 -90.0 -89.5 -89.0 -88.5 -88.0 -87.5 -87.0 -86.5 ...
@@ -82,6 +82,63 @@ Data variables:
     V10M     (time, lat, lon) float64 -1.59 -1.562 -1.533 -1.504 -1.476 ...
     V2M      (time, lat, lon) float64 -1.186 -1.163 -1.14 -1.117 -1.094 ...
     V50M     (time, lat, lon) float64 -2.362 -2.323 -2.283 -2.243 -2.204 ...
+Attributes:
+    History: Original file generated: Sat May 31 18:20:30 2014 GMT
+    Comment: GMAO filename: d5124_m2_jan79.inst1_2d_asm_Nx.19800101.nc4
+    Filename: MERRA2_100.inst1_2d_asm_Nx.19800101.nc4
+    Conventions: CF-1
+    Institution: NASA Global Modeling and Assimilation Office
+    References: http://gmao.gsfc.nasa.gov
+    Format: NetCDF-4/HDF-5
+    SpatialCoverage: global
+    VersionID: 5.12.4
+    TemporalRange: 1980-01-01 -> 2016-12-31
+    identifier_product_doi_authority: http://dx.doi.org/
+    ShortName: M2I1NXASM
+    GranuleID: MERRA2_100.inst1_2d_asm_Nx.19800101.nc4
+    ProductionDateTime: Original file generated: Sat May 31 18:20:30 2014 GMT
+    LongName: MERRA2 inst1_2d_asm_Nx: 2d,3-Hourly,Instantaneous,Single-Level,Assimilation,Single-Level Diagnostics
+    Title: MERRA2 inst1_2d_asm_Nx: 2d,3-Hourly,Instantaneous,Single-Level,Assimilation,Single-Level Diagnostics
+    SouthernmostLatitude: -90.0
+    NorthernmostLatitude: 90.0
+    WesternmostLongitude: -180.0
+    EasternmostLongitude: 179.375
+    LatitudeResolution: 0.5
+    LongitudeResolution: 0.625
+    DataResolution: 0.5 x 0.625
+    Source: CVS tag: GEOSadas-5_12_4
+    Contact: http://gmao.gsfc.nasa.gov
+    identifier_product_doi: 10.5067/3Z173KIE2TPD
+    RangeBeginningDate: 1980-01-01
+    RangeBeginningTime: 00:00:00.000000
+    RangeEndingDate: 1980-01-01
+    RangeEndingTime: 23:00:00.000000
 ~~~
 {: .bash}
+
+This is a nice illustration of a properly documented NetCDF file.
+
+We can quickly visualize one time slice of the data as follows. Let's look at the air temperature variable:
+
+~~~
+ds['T10M'][0,:,:].plot()
+~~~
+{: .python}
+
+<br>
+<img src="../fig/temperaturePlot.png" width = "400" border = "10">
+<br>
+
+We expect a typical use of ADAPT scripts will be to subset existing data for the HMA region. Using Python, we can use the "slice" method:
+
+~~~
+ds['T10M'].sel(lat=slice(0,50),lon=slice(55,115),time="1980-01-01T01:00:00").plot()
+~~~
+{: .python}
+
+<br>
+<img src="../fig/temperaturePlotSubset.png" width = "400" border = "10">
+<br>
+
+
 
