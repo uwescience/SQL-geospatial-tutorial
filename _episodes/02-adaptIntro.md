@@ -75,9 +75,7 @@ And your command prompt will now look like this:
 ~~~
 {: .bash}
 
-For new users, this step can be initially confusing. Once passing through these initial security requests it will seem that you are now "in" to ADAPT and ready to work. But really you are just through the first layer of security, sitting on the ngalogin server, from which you now must to make another secure connection to the VM environment where you will your work.
-
-So the next step is to SSH yet again to the VM environment, in our case one of the himat101, etc. VMs. This is were our paths can diverge, because ADAPT offers both a Linux and Windows operating system environment. The next two lessons will explore the Linux and Windows VMs.
+For new users, this step can be initially confusing. Once passing through these initial security requests it will seem that you are now "in" to ADAPT and ready to work. But really you are just through the first layer of security, sitting on the ngalogin server, from which you now must to make another secure connection to the VM environment where you will your work. You will have two choices regarding that environment: Linux or Windows. This is the topic of the following two lessons.
 
 ## Recommended Practices with HiMAT-ADAPT
 
