@@ -4,8 +4,13 @@ title: "NASA ADAPT: Windows VM"
 teaching: 15
 exercises: 0
 questions:
+- "How do I access the ADAPT Windows VM?"
+- "How do I visualize raster data using ArcGIS PRO?"
 objectives:
+- "Learn how to navigate ADAPT for those familiar with Windows environment"
+- "Learn advantages/disadvantages of Windows VM for HiMAT project work"
 keypoints:
+- "ADAPT provides a Windows interface for access to HiMAT data. The primary advantage is taking advantage of GIS software tools."
 
 ---
 
@@ -31,4 +36,26 @@ A new window will pop up showing a Windows Login page:
 <br>
 <img src="../fig/windowsLogin.png" width = "400" border = "10">
 <br>
+
+After entering your Windows Login credentials, you will see the desktop:
+
+<br>
+<img src="../fig/windowsDesktop1.png" width = "600" border = "10">
+<br>
+
+Click on the Windows Start menu icon (lower left corner): 
+
+<br>
+<img src="../fig/windowsDesktop2.png" width = "600" border = "10">
+<br>
+
+## ArcGIS PRO
+
+From the Windows Start menu, type "ArcGIS" and start the ArcGIS PRO software.
+
+<br>
+<img src="../fig/arcgisExample.png" width = "600" border = "10">
+<br>
+
+* more information on using ArcGIS on ADAPT
 
