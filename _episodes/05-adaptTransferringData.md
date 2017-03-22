@@ -1,14 +1,15 @@
 ---
 
 title: "Transferring Data to/from ADAPT"
-teaching: 15
+teaching: 5
 exercises: 0
 questions: 
-- ""
+- "How do I get data on/off of ADAPT?"
 objectives:
-- ""
+- "Learn the different ways to transfer data depending on which local operating system you are using"
 keypoints:
-- ""
+- "Use standard secure ftp protocols to transfer data to/from your local computer"
+- "Use WinSCP if on a Windows platform, and sftp from the command line if on Mac/Linux"
 
 ---
 

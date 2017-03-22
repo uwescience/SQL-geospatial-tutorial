@@ -1,7 +1,7 @@
 ---
 
 title: "NASA ADAPT: Windows VM"
-teaching: 15
+teaching: 10
 exercises: 0
 questions:
 - "How do I access the ADAPT Windows VM?"

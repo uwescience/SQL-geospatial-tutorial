@@ -1,16 +1,18 @@
 ---
 
 title: "NASA ADAPT: Linux VM"
-teaching: 15
+teaching: 10
 exercises: 0
 questions:
 - "How do I initiate a Linux VM session on ADAPT?"
-- "What folders "
+- "Where can I find various HiMAT datasets?"
+- "What storage resources do I have access to?"
 objectives:
-- "Learn how to directly access vector data from the geoserver portal"
-- "Practice accessing data layers from geoserver directly through QGIS"
+- "Learn the necessary steps to initiate a Linux VM on ADAPT"
+- "Become familiar with navigating the Linux ADAPT command line environment"
+- "Learn what kinds of software and processing we can carry out on the Linux VM"
 keypoints:
-- "Geoserver is a powerful tool for organizing and distributing vector data in any format"
+- "The Linux VM provides us with maximum flexibility in accessing and manipulating HiMAT datasets (relative to the Windows VM)"
 
 ---
 
