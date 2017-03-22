@@ -60,7 +60,19 @@ $ ssh -X <userID>@ngalogin.nccs.nasa.gov
 
 The "-X" option is needed later if you use any of the Graphical User Interfaces offered by ADAPT. 
 
-Continue following [these steps](https://www.nccs.nasa.gov/services/adapt/how_to_use_adapt/logging_into_adapt).
+Now you will be asked for your passcode. Your passcode consists of your RSA PIN, followed by your RSA TOKEN (i.e. the 6 numbers currently showing on your securID RSA device), all entered in at once on the same line.
+
+<br>
+<img src="../fig/rsatoken_passcode.png" width = "400" border = "10">
+<br>
+
+Next, enter your LDAP password:
+
+<br>
+<img src="../fig/ldap_password.png" width = "400" border = "10">
+<br>
+
+(Note that these instructions are also explained [here](https://www.nccs.nasa.gov/services/adapt/how_to_use_adapt/logging_into_adapt)).
 
 Once you have successfully entered your credentials you will see a few lines of text like this:
  
