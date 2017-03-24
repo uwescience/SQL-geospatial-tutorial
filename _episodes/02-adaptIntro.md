@@ -54,11 +54,11 @@ Establishing an SSH connection requires typing your various credentials into a t
 From your terminal prompt, login to ADAPT:
 
 ~~~
-$ ssh -X <userID>@ngalogin.nccs.nasa.gov
+$ ssh -XC <userID>@ngalogin.nccs.nasa.gov
 ~~~
 {: .bash}
 
-The "-X" option is needed later if you use any of the Graphical User Interfaces offered by ADAPT. 
+The "-X" option is needed later if you use any of the Graphical User Interfaces offered by ADAPT, and "-C" is a data compression option which we have found to reduce the lag introduced when running some software like QGIS.
 
 Now you will be asked for your passcode. Your passcode consists of your RSA PIN, followed by your RSA TOKEN (i.e. the 6 numbers currently showing on your securID RSA device), all entered in at once on the same line.
 
