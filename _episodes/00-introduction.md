@@ -69,6 +69,7 @@ INSERT INTO seattlecrimeincidents VALUES
 
 Some common [data types](https://www.postgresql.org/docs/9.4/static/datatype.html):
 <br>
+
 | Name | Aliases | Description |
 | --- | --- | --- |
 |  boolean | bool | logical Boolean (true/false) |
