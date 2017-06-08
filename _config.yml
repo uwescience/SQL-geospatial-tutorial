@@ -14,7 +14,7 @@ repo: https://github.com/uwescience/SQL-geospatial-tutorial
 
 # Root URL below username.github.io domain, with leading slash but no trailing slash.
 # For example, for 'https://geohackweek.github.io/lesson-example', use '/lesson-example'.
-root: "/SQL-tutorial"
+root: "/SQL-geospatial-tutorial"
 
 # Contact email address.
 email: arendta@uw.edu
