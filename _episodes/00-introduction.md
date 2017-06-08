@@ -73,13 +73,13 @@ Some common [data types](https://www.postgresql.org/docs/9.4/static/datatype.htm
 | Name | Aliases | Description |
 | --- | --- | --- |
 |  boolean | bool | logical Boolean (true/false) |
-| character [(n)] | char [(n)]  | fixed-length character string |
+| character | char | fixed-length character string |
 | date |  | calendar date (year, month, day) |
 | double precision | float8 | double precision floating-point number (8 bytes) |
 | integer | int, int4 | signed four-byte integer |
 | json  |  | JSON data |
 | money |  | currency amount |
-| timestamp [p] [ without time zone ] |  | date and time (no time zone) |
+| timestamp |  | date and time (no time zone) |
 | xml |  | XML data |
 
   ## Database rules:
