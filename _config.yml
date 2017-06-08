@@ -7,14 +7,14 @@ encoding: utf-8
 kind: "lesson"
 
 # Overall title for pages.
-title: "HiMAT data tutorial"
+title: "DSSG SQL/Geospatial Tutorial"
 
 # Repository URL (without trailing slash).
-repo: https://github.com/geohackweek/himat-data
+repo: https://github.com/uwescience/SQL-geospatial-tutorial
 
 # Root URL below username.github.io domain, with leading slash but no trailing slash.
 # For example, for 'https://geohackweek.github.io/lesson-example', use '/lesson-example'.
-root: "/himat-data"
+root: "/SQL-tutorial"
 
 # Contact email address.
 email: arendta@uw.edu
@@ -35,7 +35,7 @@ example_repo: "https://github.com/swcarpentry/lesson-example"
 example_site: "https://swcarpentry.github.com/lesson-example"
 
 # Start time in minutes (540 is 09:00 am)
-start_time: 600
+start_time: 540
 
 # Specify that things in the episodes collection should be output.
 collections:
