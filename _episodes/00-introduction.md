@@ -18,16 +18,17 @@ key points:
 * nearly all databases use the _relational_ data model
 
 <br><br>
-<img src="../assets/img/databaseIntro/terminology.png" width = "400" border = "10">
+<img src="../assets/img/databaseIntro/terminology.png" width = "600" border = "10">
 <br><br><br>
 
 ### Relational data model:
 * data are structured into row/column format 
 
-| crimesID | Offense type | Offense code | Date | Location | 
-| ---- | ---- | ----- | ---- | ---- | ---- |
-|  1 | tresspass | 5700 | 2015-01-28 09:30:00 |  12XX Block of E Pike St |
-|  2 |larceny-theft | 2300 |2015-02-21 08:24:21 |  15XX Block of Aurora St | 
+> | crimesID | Offense type | Offense code | Date | Location | 
+> | ---- | ---- | ----- | ---- | ---- | ---- |
+> |  1 | tresspass | 5700 | 2015-01-28 09:30:00 |  12XX Block of E Pike St |
+> |  2 |larceny-theft | 2300 |2015-02-21 08:24:21 |  15XX Block of Aurora St | 
+
 
 * each record has a unique identifier (primary key)
 
@@ -68,103 +69,17 @@ INSERT INTO seattlecrimeincidents VALUES
 
 Some common [data types](https://www.postgresql.org/docs/9.4/static/datatype.html):
 <br>
-<div class="TABLE">
-    <a name="DATATYPE-TABLE" id="DATATYPE-TABLE"></a>
-
-<small>
-    <table class="CALSTABLE" border="1">
-      <colgroup><col>
-      <col>
-      <col>
-
-      <thead>
-        <tr>
-          <th>Name</th>
-
-          <th>Aliases</th>
-
-          <th>Description</th>
-        </tr>
-      </thead>
-
-      <tbody>
-
-        <tr>
-          <td><tt class="TYPE">boolean</tt></td>
-
-          <td><tt class="TYPE">bool</tt></td>
-
-          <td>logical Boolean (true/false)</td>
-        </tr>
-
-        <tr>
-          <td><tt class="TYPE">character [(<tt class="REPLACEABLE c4">n</tt>)]</tt></td>
-
-          <td><tt class="TYPE">char [(<tt class="REPLACEABLE c4">n</tt>)]</tt></td>
-
-          <td>fixed-length character string</td>
-        </tr>
-
-        <tr>
-          <td><tt class="TYPE">date</tt></td>
-
-          <td>&nbsp;</td>
-
-          <td>calendar date (year, month, day)</td>
-        </tr>
-
-        <tr>
-          <td><tt class="TYPE">double precision</tt></td>
-
-          <td><tt class="TYPE">float8</tt></td>
-
-          <td>double precision floating-point number (8 bytes)</td>
-        </tr>
-
-        <tr>
-          <td><tt class="TYPE">integer</tt></td>
-
-          <td><tt class="TYPE">int</tt>, <tt class="TYPE">int4</tt></td>
-
-          <td>signed four-byte integer</td>
-        </tr>
-
-        <tr>
-          <td><tt class="TYPE">json</tt></td>
-
-          <td>&nbsp;</td>
-
-          <td>JSON data</td>
-        </tr>
-
-
-        <tr>
-          <td><tt class="TYPE">money</tt></td>
-
-          <td>&nbsp;</td>
-
-          <td>currency amount</td>
-        </tr>
-
-        <tr>
-          <td><tt class="TYPE">timestamp [(<tt class="REPLACEABLE c4">p</tt>)] [ without time zone
-          ]</tt></td>
-
-          <td>&nbsp;</td>
-
-          <td>date and time (no time zone)</td>
-        </tr>
-
-        <tr>
-          <td><tt class="TYPE">xml</tt></td>
-
-          <td>&nbsp;</td>
-
-          <td>XML data</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+| Name | Aliases | Description |
+| --- | --- | --- |
+|  boolean | bool | logical Boolean (true/false) |
+| character [(n)] | char [(n)]  | fixed-length character string |
+| date |  | calendar date (year, month, day) |
+| double precision | float8 | double precision floating-point number (8 bytes) |
+| integer | int, int4 | signed four-byte integer |
+| json  |  | JSON data |
+| money |  | currency amount |
+| timestamp [p] [ without time zone ] |  | date and time (no time zone) |
+| xml |  | XML data |
 
   ## Database rules:
 ### take the time to [normalize](https://en.wikipedia.org/wiki/Database_normalization) your tables to minimize redundancy
