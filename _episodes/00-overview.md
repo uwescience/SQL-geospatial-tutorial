@@ -31,11 +31,11 @@ Start DBeaver.
 
 1. Click on the database icon:
 <br><br>
-<img src="assets/img/toolbar1.png" width = "400" border = "10">
+<img src="../assets/img/toolbar1.png" width = "400" border = "10">
 <br><br><br><br>
 2. Search `postgresql` as connection type.
 <br><br>
-<img src="assets/img/searchpostgres.PNG" width="400">
+<img src="../assets/img/searchpostgres.PNG" width="400">
 <br><br><br><br>
 3. Fill in the connection information.
 
@@ -44,24 +44,24 @@ Start DBeaver.
 - The username is: some_username
 - The password is: somepassword
 <br><br>
-<img src="assets/img/connection.PNG" width="400">
+<img src="../assets/img/connection.PNG" width="400">
 <br><br><br><br>
 4. Click `Test Connection ...` to ensure that you have entered the correct credentials.
 <br><br>
 5. You might get prompted with the download driver files window if this is your first time using postgresql.
 Click on Download and follow the instructions.
 <br><br>
-<img src="assets/img/driverinstall.PNG" width="400">
+<img src="../assets/img/driverinstall.PNG" width="400">
 <br><br><br><br>
 6. If everything is connected you will get a success message.
 <br><br>
-<img src="assets/img/serversuccess.PNG" width="400">
+<img src="../assets/img/serversuccess.PNG" width="400">
 <br><br><br><br>
 7. Keep pressing next on the connection window, until finish. Once you are through, you will see the following when expanded.
 We only need to access the tables. Double click on `seattlecrimeincidents` table, then to `Data` tab so see the data.
 Take some time to become familiar with the contents of the table.
 <br><br>
-<img src="assets/img/viewdata.PNG" width = "600" border = "1">
+<img src="../assets/img/viewdata.PNG" width = "600" border = "1">
 <br><br><br><br>
 
 ## Step 2: Issuing your first queries
@@ -71,11 +71,11 @@ Queries can be issued to the database in many different ways. Here we'll use the
 <br>
 1. click on the "SQL Editor" button:
 <br><br>
-<img src="assets/img/sqleditor.png" width = "400" border = "10">
+<img src="../assets/img/sqleditor.png" width = "400" border = "10">
 <br><br>
 2. This should bring up a new tab:
 <br><br>
-<img src="assets/img/sqleditorview.png" width = "400" border = "10">
+<img src="../assets/img/sqleditorview.png" width = "400" border = "10">
 <br><br>
 The upper pane is where we will issue our query, and the results of the query will be shown in the results pane below.
 <br><br>
