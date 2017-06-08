@@ -27,8 +27,8 @@ email: arendta@uw.edu
 is_production: true
 
 # Sites.
-ghw_site: "https://geohackweek.github.io"
-ghw_github: "https://github.com/geohackweek"
+ghw_site: "https://www.postgresql.org"
+ghw_github: "https://github.com/uwescience/DSSG2017-VitalSigns"
 swc_site: "https://software-carpentry.org"
 template_repo: "https://github.com/swcarpentry/styles"
 example_repo: "https://github.com/swcarpentry/lesson-example"
