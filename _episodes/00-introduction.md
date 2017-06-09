@@ -4,16 +4,20 @@ title: "Introduction to Databases"
 teaching: 15
 exercises: 0
 questions:
-- "In this exercise we will work on connecting to a database hosted on Amazon Web Services. Then we will practice issuing a few queries and start experimenting with SQL."
+- "What is a database?"
+- "How are data structured within a database?"
+- "What are the advantages of working with data in a database?"
 objectives:
-- "Learn about the overall architecture of the HiMAT infrastructure"
+- "Learn the fundamentals of the relational data model"
+- "Begin to identify in which cases it makes sense to put your data in a database"
+- "Learn a bit of Structured Query Language (SQL)"
 key points:
-- "Where you go to store and find data during HiMAT project depends on the data type, size and usage constraints"
-- "Several methods/data centers are provided and users can choose which approach works best"
-- "co-location of processing/analysis with data storage is encouraged, to minimize transfer of large files" 
+- "Databases offer a highly structured framework for storing and manipulating data"
+- "Setting up this structure takes some time"
+- "Advantages include the ability to investigate complex relationships between data using a simple query language"
 ---
 
-### What is a database? 
+# What is a database? 
 * software system for capturing, storing and analyzing data 
 * nearly all databases use the _relational_ data model
 
@@ -21,7 +25,7 @@ key points:
 <img src="../assets/img/databaseIntro/terminology.png" width = "600" border = "10">
 <br><br><br>
 
-### Relational data model:
+# Relational data model:
 * data are structured into row/column format 
 
 > | crimesID | Offense type | Offense code | Date | Location | 
@@ -32,7 +36,6 @@ key points:
 
 * each record has a unique identifier (primary key)
 
-### Relational data model:
 * uses Structured Query Language (SQL):   
 
 ```SQL
@@ -43,11 +46,11 @@ CREATE TABLE seattlecrimesincidents
      "Date" timestamp,
      "Location" character); 
 ```
-
-| crimesID | Offense type | Offense code | Date | Location | 
-| ---- | ---- | ----- | ---- | ---- | ---- |
-|   |   |   |   |   |   
-
+> ### CREATE TABLE 
+> | crimesID | Offense type | Offense code | Date | Location | 
+> | ---- | ---- | ----- | ---- | ---- | ---- |
+> |   |   |   |   |   |   
+{: .challenge}
 
 * populating the database records:
 ```SQL
@@ -58,10 +61,12 @@ INSERT INTO seattlecrimeincidents VALUES
     (2,'larceny-theft',2300, '2015-02-21 08:24:21','15XX Block of Aurora St');
 ```
 
-| crimesID | Offense type | Offense code | Date | Location | 
-| ---- | ---- | ----- | ---- | ---- | ---- |
-|   1 | tresspass | 5700 | 2015-01-28 09:30:00 | 12XX Block of E Pike St |
-|   2 | larceny-theft | 2300 |  2015-02-21 08:24:21 | 15XX Block of Aurora St | 
+> ### INSERT INTO TABLE
+> | crimesID | Offense type | Offense code | Date | Location | 
+> | ---- | ---- | ----- | ---- | ---- | ---- |
+> |   1 | tresspass | 5700 | 2015-01-28 09:30:00 | 12XX Block of E Pike St |
+> |   2 | larceny-theft | 2300 |  2015-02-21 08:24:21 | 15XX Block of Aurora St | 
+{: challenge}
 
 ## Data in each column must be of the same type
 
