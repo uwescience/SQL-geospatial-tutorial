@@ -33,7 +33,6 @@ key points:
 > |  1 | tresspass | 5700 | 2015-01-28 09:30:00 |  12XX Block of E Pike St |
 > |  2 |larceny-theft | 2300 |2015-02-21 08:24:21 |  15XX Block of Aurora St | 
 
-
 * each record has a unique identifier (primary key)
 
 * uses Structured Query Language (SQL):   
@@ -46,11 +45,12 @@ CREATE TABLE seattlecrimesincidents
      "Date" timestamp,
      "Location" character); 
 ```
-> ### CREATE TABLE 
-> | crimesID | Offense type | Offense code | Date | Location | 
-> | ---- | ---- | ----- | ---- | ---- | ---- |
-> |   |   |   |   |   |   
-{: .challenge}
+### CREATE TABLE 
+
+| crimesID | Offense type | Offense code | Date | Location | 
+| ---- | ---- | ----- | ---- | ---- | ---- |
+|   |   |   |   |   |   
+
 
 * populating the database records:
 ```SQL
@@ -63,12 +63,10 @@ INSERT INTO seattlecrimeincidents VALUES
 
 ### INSERT INTO TABLE
 
-```
 | crimesID | Offense type | Offense code | Date | Location | 
 | ---- | ---- | ----- | ---- | ---- | ---- |
 |   1 | tresspass | 5700 | 2015-01-28 09:30:00 | 12XX Block of E Pike St |
 |   2 | larceny-theft | 2300 |  2015-02-21 08:24:21 | 15XX Block of Aurora St | 
-```
 
 ## Data in each column must be of the same type
 
