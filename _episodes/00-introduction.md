@@ -61,12 +61,14 @@ INSERT INTO seattlecrimeincidents VALUES
     (2,'larceny-theft',2300, '2015-02-21 08:24:21','15XX Block of Aurora St');
 ```
 
-> ### INSERT INTO TABLE
-> | crimesID | Offense type | Offense code | Date | Location | 
-> | ---- | ---- | ----- | ---- | ---- | ---- |
-> |   1 | tresspass | 5700 | 2015-01-28 09:30:00 | 12XX Block of E Pike St |
-> |   2 | larceny-theft | 2300 |  2015-02-21 08:24:21 | 15XX Block of Aurora St | 
-{: challenge}
+### INSERT INTO TABLE
+
+```
+| crimesID | Offense type | Offense code | Date | Location | 
+| ---- | ---- | ----- | ---- | ---- | ---- |
+|   1 | tresspass | 5700 | 2015-01-28 09:30:00 | 12XX Block of E Pike St |
+|   2 | larceny-theft | 2300 |  2015-02-21 08:24:21 | 15XX Block of Aurora St | 
+```
 
 ## Data in each column must be of the same type
 
