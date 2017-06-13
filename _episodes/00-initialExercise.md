@@ -1,5 +1,4 @@
 ---
-
 title: "Initial Exercise"
 teaching: 10
 exercises: 0
@@ -8,21 +7,30 @@ questions:
 objectives:
 - "Introduce questions that will guide our sample exercises"
 - "Discover pros and cons of your existing toolsets for exploring data"
-key points:
+keypoints:
 - "Data exploration comes in many different forms"
 ---
 
 ## Exploration of Seattle Crimes data
 
-Our lesson will derive examples from the "SeattleCrimeIncidents.csv" which can be downloaded [here](http://www.seattle.gov/seattle-police-department/crime-data/spd-data-sets)
+* our lesson will use data from the Seattle Police Department to explore database functionality
+* the Seattle Police Department shares information on all reported crimes incidents 
+* we will use a 2015 data table where each row is a different crime incident
+* the data were originally acquired from the [Seattle Police Department](http://www.seattle.gov/seattle-police-department/crime-data/spd-data-sets)
 
 <br><br>
 <img src="../assets/img/databaseIntro/crimesSeattle.png" width = "600" border = "10">
-<br><br><br>
+<br>
+
+### click **[here]('../files/SeattleCrimesIncidents.csv')** to access the comma-separated-value file 
+
+<br>
+<hr>
+<br>
 
 ## Research Questions
 
-Whenever we set off to explore data, it is a good practice to make a list of the key research questions that will guide your analysis. In our examples, we will be guided by the following five questions:
+In our examples for subsequent lessons, we will be guided by the following five research questions:
 
 > ## Questions
 > ### 1. How many "TRESPASS" offenses occurred in total?
@@ -31,3 +39,10 @@ Whenever we set off to explore data, it is a good practice to make a list of the
 > ### 4. Which census track has the highest crime rate?
 > ### 5. What is the most common crime within 5 km of my house?
 {: .callout}
+
+> ## Data Exploration (5 minutes)
+> * Read through the 5 research questions above.
+> * What method would you use, given what you know right now, to try to answer these questions?
+> * What software would you use?
+> * Within that software, what libraries or tools would you employ?
+{: .challenge}

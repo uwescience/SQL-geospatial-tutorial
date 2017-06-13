@@ -12,7 +12,7 @@ objectives:
 - "Begin to identify in which cases it makes sense to put your data in a database"
 - "Learn a bit of Structured Query Language (SQL)"
 - "Learn about some of the specific rules of how to structure a database"
-key points:
+keypoints:
 - "Databases offer a highly structured framework for storing and manipulating data"
 - "Setting up this structure takes some time"
 - "Advantages include the ability to investigate complex relationships between data using a simple query language"
