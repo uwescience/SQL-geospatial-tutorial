@@ -100,52 +100,52 @@ You can use this [cheatsheet](http://www.sql-tutorial.net/sql-cheat-sheet.pdf) t
 Note: for homicide we see there are a lot of types of homicides -> use summarized offense description
 
 * Count how many offenses are for each Summarized Offense Description
->~~~
->select "Summarized Offense Description", count(*) from SeattleCrimeIncidents
+> ~~~
+> select "Summarized Offense Description", count(*) from SeattleCrimeIncidents
 	group by "Summarized Offense Description";
->~~~
->{: .sql}
+> ~~~
+> {: .sql}
 
 * Count how many offenses per year
->~~~
->select year, count(*) from SeattleCrimeIncidents
+> ~~~
+> select year, count(*) from SeattleCrimeIncidents
 	group by year;
->~~~
->{: .sql}
+> ~~~
+> {: .sql}
 
 
->## Crimes for each month?
+> ## Crimes for each month?
 >
-> >##Solution
+> > ##Solution
 > >
-> >~~~
-> >SELECT month,count(*) FROM seattlecrimeincidents GROUP BY month ORDER BY month ASC
-> >~~~
-> >{: .sql}
->{: .solution}
+> > ~~~
+> > SELECT month,count(*) FROM seattlecrimeincidents GROUP BY month ORDER BY month ASC
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 
->## Month with highest number of bike thefts?
-> >##Solution
-> >~~~SELECT month,count(*) FROM seattlecrimeincidents
+> ## Month with highest number of bike thefts?
+> > ##Solution
+> > ~~~SELECT month,count(*) FROM seattlecrimeincidents
 	WHERE "Offense Type" = 'THEFT-BICYCLE'
 	GROUP BY month
 	ORDER BY count DESC
-> >~~~
-> >{: .sql}
->{: .solution}
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
->## Number of crimes per census tract?
-> >##Solution
-> >~~~
-> >SELECT "census tract 2000",count(*) FROM seattlecrimeincidents
+> ## Number of crimes per census tract?
+> > ##Solution
+> > ~~~
+> > SELECT "census tract 2000",count(*) FROM seattlecrimeincidents
 	group by "census tract 2000"
 	ORDER BY "census tract 2000" ASC;
-> >~~~
-> >{: .sql}
->{: .solution}
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
  
