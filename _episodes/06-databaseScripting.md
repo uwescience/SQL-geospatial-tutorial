@@ -65,4 +65,5 @@ df <- fetch(rs)
 #### Useful Resources:
 * fiddle with SQL: [sqlfiddle](http://sqlfiddle.com/)
 * check out [SQLShare](https://sqlshare.escience.washington.edu/sqlshare/) - databases made easy (you can find SeattleCrimeIncidents and census datasets already there)
+* manipulate `.csv` files locally with the SQL language: [csvkit](https://csvkit.readthedocs.io/en/1.0.2/)
 * querying urban data sets with [Socrata Query Language (SoQL)](https://dev.socrata.com/docs/queries/)
