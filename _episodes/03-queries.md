@@ -116,7 +116,7 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 
 > ## Crimes for each month?
 >
-> > ##Solution
+> > ## Solution
 > >
 > > ~~~
 > > SELECT month,count(*) FROM seattlecrimeincidents GROUP BY month ORDER BY month ASC
@@ -127,7 +127,7 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 
 
 > ## Month with highest number of bike thefts?
-> > ##Solution
+> > ## Solution
 > > ~~~SELECT month,count(*) FROM seattlecrimeincidents
 	WHERE "Offense Type" = 'THEFT-BICYCLE'
 	GROUP BY month
@@ -138,7 +138,7 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 {: .challenge}
 
 > ## Number of crimes per census tract?
-> > ##Solution
+> > ## ßSolution
 > > ~~~
 > > SELECT "census tract 2000",count(*) FROM seattlecrimeincidents
 	group by "census tract 2000"
