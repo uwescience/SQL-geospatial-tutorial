@@ -128,7 +128,8 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 
 > ## Month with highest number of bike thefts?
 > > ## Solution
-> > ~~~SELECT month,count(*) FROM seattlecrimeincidents
+> > ~~~
+> > SELECT month,count(*) FROM seattlecrimeincidents
 	WHERE "Offense Type" = 'THEFT-BICYCLE'
 	GROUP BY month
 	ORDER BY count DESC
