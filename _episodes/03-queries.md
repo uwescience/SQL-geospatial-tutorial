@@ -139,7 +139,7 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 {: .challenge}
 
 > ## Number of crimes per census tract?
-> > ## ßSolution
+> > ## Solution
 > > ~~~
 > > SELECT "census tract 2000",count(*) FROM seattlecrimeincidents
 	group by "census tract 2000"
@@ -148,6 +148,36 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 > > {: .sql}
 > {: .solution}
 {: .challenge}
+
+# Ideas of aliasing and nesting
+
+* adding better column names
+> ~~~
+> SELECT "census tract 2000" as "CensusTract",count(*) as "crime_count" FROM seattlecrimeincidents
+	group by "census tract 2000"
+	ORDER BY "census tract 2000" ASC;
+> ~~~
+> {: .sql}
+
+
+> ~~~
+> SELECT "census tract 2000" as "CensusTract",count(*) as "crime_count" FROM seattlecrimeincidents
+	group by "census tract 2000";
+> ~~~
+> {: .sql}
+
+* extracting the max
+
+> ~~~
+> SELECT max(crimeTable.crime_count) FROM 
+(SELECT "census tract 2000" as "CensusTract",count(*) as "crime_count" FROM seattlecrimeincidents
+	group by "census tract 2000") as crimeTable
+> ~~~
+> {: .sql}
+
+
+# Joining two tables
+
 
  
 
