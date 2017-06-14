@@ -1,14 +1,15 @@
 ---
 title: "Initial Exercise"
-teaching: 10
-exercises: 0
+teaching: 5
+exercises: 10
 questions:
 - "What tools would you use to solve some typical data queries?"
 objectives:
 - "Introduce questions that will guide our sample exercises"
 - "Discover pros and cons of your existing toolsets for exploring data"
+- "Gain some immediate experience working with a typical DSSG dataset"
 keypoints:
-- "Data exploration comes in many different forms"
+- "There are many different ways to explore the same dataset"
 ---
 
 ## Exploration of Seattle Crimes data
@@ -22,7 +23,7 @@ keypoints:
 <img src="../assets/img/databaseIntro/crimesSeattle.png" width = "600" border = "10">
 <br>
 
-### click **[here]('../files/SeattleCrimesIncidents.csv')** to access the comma-separated-value file 
+### click [here](https://github.com/uwescience/SQL-geospatial-tutorial/blob/gh-pages/files/SeattleCrimeIncidents.csv) to access the comma-separated-value file 
 
 <br>
 <hr>

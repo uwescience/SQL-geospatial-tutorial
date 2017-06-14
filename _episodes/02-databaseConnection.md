@@ -1,15 +1,12 @@
 ---
-
 title: "Database Connection"
-teaching: 15
-exercises: 0
+teaching: 5
+exercises: 10
 questions:
 - "How do I connect to a cloud-based relational database?"
-- "How do I issue basic queries?"
 objectives:
 - "Learn how to connect to a relational database using a graphical user interface called dBeaver"
-- "Become acquainted with a few simple SQL queries"
-key points:
+keypoints:
 - "dBeaver provides a simple interface for viewing database tables and testing SQL queries"
 ---
 
@@ -24,7 +21,7 @@ We will use the [DBeaver](http://dbeaver.jkiss.org/download/) software to connec
 
 * Linux - [click here](http://dbeaver.jkiss.org/files/dbeaver-ce_latest_amd64.deb) and download the file to install the application
 
-Start DBeaver.
+* once you have the software installed, start DBeaver
 
 #### Connect to the database
 

@@ -1,5 +1,4 @@
 ---
-
 title: "Introduction to Databases"
 teaching: 15
 exercises: 0
@@ -13,7 +12,7 @@ objectives:
 - "Learn a bit of Structured Query Language (SQL)"
 - "Learn about some of the specific rules of how to structure a database"
 keypoints:
-- "Databases offer a highly structured framework for storing and manipulating data"
+- "Databases offer a highly structured framework for storing and rapidly manipulating data"
 - "Setting up this structure takes some time"
 - "Advantages include the ability to investigate complex relationships between data using a simple query language"
 ---
@@ -27,10 +26,24 @@ keypoints:
 <img src="../assets/img/databaseIntro/terminology.png" width = "600" border = "10">
 <br><br><br>
 
-Within the relational data model:
+## Motivation for using a database
 
-* each record has a unique identifier (primary key)
-* data are manipulated using _Structured Query Language_ (SQL):   
+* fast searching
+* powerful methods for performing analysis on groups of data
+* capability of joining information between datasets
+* data types have unique functionality (e.g. dates are not just integers but have methods related to year, month, day)
+* centralized repository, minimizes duplication, controlled access across multiple users
+* optional: geospatial encoding  
+
+## The relational data model:
+
+* there are many different flavors of databases but the most well developed is the _relational_ data model
+   * each record has a unique identifier (primary key)
+   * data are manipulated using _Structured Query Language_ (SQL):   
+
+## Structured Query Language (SQL):
+* standard language for relational databases
+* across different databases the core syntax is similar but there are small differences in some function names
 
 ## Creating a database table:
 
@@ -54,7 +67,7 @@ CREATE TABLE seattlecrimesincidents
 <img src="../assets/img/databaseIntro/emptyDatabaseRow.png" width = "400" border = "10">
 <br>
 <hr>
-<br><br><br>
+<br>
 
 ### Data Types
 
@@ -93,16 +106,18 @@ INSERT INTO seattlecrimeincidents VALUES
 * note that the order of the values insterted matches the order in which the column names were created
 * here is what the table looks like now:
 
-_____
+<br>
+<hr>
+<br>
 
 | crimesID | Offense type | Offense code | Date | Location | 
 | ---- | ---- | ----- | ---- | ---- | ---- |
 |   1 | tresspass | 5700 | 2015-01-28 09:30:00 | 12XX Block of E Pike St |
 |   2 | larceny-theft | 2300 |  2015-02-21 08:24:21 | 15XX Block of Aurora St | 
 
-______
-<br><br>
-
+<br>
+<hr>
+<br>
 
 ## Database rules:
 
@@ -173,19 +188,30 @@ ______
 
 ### Selecting Data:
 
-* one of the most common operations on a SQL table is to ```SELECT``` data:
+* one of the most common operations on a SQL table is to ```SELECT``` data
+* here we select based on a specific offense code:
 
 ```SQL
-SELECT * 
+SELECT "Offense type", "Offense code", "Date", "Location"
    FROM seattlecrimeincidents 
    WHERE "Offense code" = 5700;
 ```
 
-* use a "WHERE" clause to select specific rows
+* note we are using a "WHERE" clause to select specific rows
+
+<br>
+<hr>
+<br>
 
 | crimesID | Offense type | Offense code | Date | Location | 
 | ---- | ---- | ----- | ---- | ---- | ---- |
 |  1 | tresspass | 5700 | 2015-01-28 09:30:00 |  12XX Block of E Pike St |
+
+<br>
+<hr>
+<br>
+
+* this example shows how to use a comma separated list to select specific columns:
 
 * selecting data:
 ```SQL
@@ -193,17 +219,27 @@ SELECT "Offense type", "Date"
    FROM seattlecrimeincidents;
 ```
 
-* use a comma separated list to select specific columns
+<br>
+<hr>
+<br>
 
 | Offense type | Date | 
 | ---- | ---- |
 | tresspass |  2015-01-28 09:30:00 | 
 | larceny-theft | 2015-02-21 08:24:21 |  
 
-## Functions: databases have a wide range of functions that can operate on row elements
+<br>
+<hr>
+<br>
 
-#### Example:
-* use a function to extract a subset of a date (e.g. year, hour) from a column with type = "timestamp"
+## Functions
+
+* databases have a wide range of functions that can operate on row elements
+* one of the most common functions is to extract a subset of a date (e.g. year, hour) from a column with type = "timestamp"
+
+<br>
+<hr>
+<br>
 
 ```SQL
 SELECT "Date Reported", date_part('hour', "Date Reported")
@@ -211,3 +247,128 @@ FROM seattlecrimeincidents
 LIMIT 5;
 ```
 
+<br>
+<hr>
+<br>
+
+* Databases also have aggregate functions used on sets of data
+* examples include SUM(), MAX(), MIN(), AVG(), COUNT(), STDDEV()
+
+## Data Analysis:
+
+* databases have powerful methods for analyzing data
+* one of the most common tasks: applying statistics across groups
+* to accomplish this we need to learn 
+    * how to GROUP sets of data
+    * how to apply statistical functions to those groups
+
+
+<br>
+<hr>
+<br>
+
+| crimesID |  Offense code | Date | Location | Damage | 
+| ---- |  ----- | ---- | ---- | ---- | ---- |
+|    1 | 5700 |   2015-01-28 09:30:00 |   12XX Block of E Pike St |  \$1,220 | 
+|    1 | 5700 |   2015-02-12 03:25:00 |   1XX Block of Aloha St |  \$11,420 |
+|    2 |   5710 |   2015-01-28 09:30:00 |   12XX Block of E Pike St |  \$5,389 |
+|    2 |   5710 |   2015-1-02 12:31:20 |   12XX Block of E Pine St |  \$15,231 |
+|    3 |  2300 |   2015-02-21 08:24:21 |   15XX Block of Aurora St |  \$2,405 |
+
+<br>
+<hr>
+<br>
+
+* suppose we aslk: "What is the total damage that occurred for each offense type?""
+* to answer this, first we need to group the data by "Offense code":
+
+<br>
+<hr>
+<br>
+<img src="../assets/img/databaseIntro/groupedTable.png" width = "600">
+<br>
+<hr>
+<br>
+
+```SQL
+SELECT SUM("Damage") 
+   FROM seattlecrimeincidents
+   GROUP BY "Offense code";
+```
+
+<br>
+<hr>
+<br>
+
+| Offense code | totalDamage | 
+|   ---- | ---- |
+|  5700  | \$12,640 | 
+|  5710 | \$20,620 |
+|  2300  | \$2,405 |
+
+<br>
+<hr>
+<br>
+
+#### Column aliasing:
+* often we want to rename newly generated columns:
+
+```SQL
+SELECT "Date Reported", date_part('hour', "Date Reported") AS "reported hour"
+FROM seattlecrimeincidents
+LIMIT 5;
+```
+
+<br>
+<hr>
+<br>
+
+| Date Reported | reported hour |
+| ----- | ----- |
+| 2015-01-28 09:30:00 | 9.0 |
+| 2015-01-28 11:05:00 | 11.0 |
+| 2015-01-29 19:57:00 | 19.0 |
+| 2015-01-28 15:17:00  | 15.0 |
+| 2015-01-27 04:25:00 | 4.0 |
+
+<br>
+<hr>
+<br>
+
+### Joining Tables
+
+* well designed databases distribute data across multiple tables, for efficiency
+* then we can JOIN data between tables as needed
+
+<br>
+<hr>
+<br>
+<img src="../assets/img/databaseIntro/joinTables.png" width = "600">
+<br>
+<hr>
+<br>
+
+### Database Implementation:
+
+* there are many relational database software implementations:
+   * commercial: Oracle, Microsoft SQL Server, IBM DB2 
+   * open source: MySQL, PostgreSQL
+
+ * regardless of the software:
+   * most databases are deployed on a server 
+   * can deploy locally for testing
+
+### Database Interface:
+
+* all databases are accessed via a _connection string_:
+   * hostname, port, user, password
+
+<br>
+<hr>
+<br>
+<img src="../assets/img/databaseIntro/databaseDiagram.png" width = "600">
+<br>
+<hr>
+<br>
+
+   

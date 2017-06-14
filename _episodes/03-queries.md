@@ -1,16 +1,17 @@
 ---
-
-title: "Queries"
-teaching: 15
-exercises: 0
+title: "SQL Queries"
+teaching: 10
+exercises: 20
 questions:
-- "How do I connect to a cloud-based relational database?"
-- "How do I issue basic queries?"
+- "What is the syntax of the Structured Query Language (SQL)?"
+- "How do I issue SQL queries to the database?"
+- "What is the advantage of using SQL over other languages?"
 objectives:
-- "Learn how to connect to a relational database using a graphical user interface called dBeaver"
-- "Become acquainted with a few simple SQL queries"
-key points:
-- "dBeaver provides a simple interface for viewing database tables and testing SQL queries"
+- "Learn how to issue a SQL query within DBeaver"
+- "Become acquainted with the general structure of a SQL query"
+- "Explore some of the advantages SQL offers over other approaches"
+keypoints:
+- "SQL provides a simple yet powerful set of tools for performing anaylsis on your data"
 ---
 
 ## Issuing your first queries
@@ -34,50 +35,49 @@ The upper pane is where we will issue our query, and the results of the query wi
 SELECT * FROM seattlecrimeincidents LIMIT 100;
 ```
 
-<br><br>
-__NOTE:__ The "LIMIT" command restricts the database to return only the first 100 rows.
-<br>
+* the "LIMIT" command restricts the database to return only the first 100 rows.
 * the `*` is a wildcard requesting all columns from the database.
-<br><br>
+<br>
+<hr>
+<br>
 
-For example, we can apply the count function to all the columns:
-<br><br>
-```sql
-SELECT count(*) FROM seattlecrimeincidents;
-```
-<br><br>
+# Practice problems
 
-This gives us the number of the rows in the table.
+In the following exercises you can use this [cheatsheet](http://www.sql-tutorial.net/sql-cheat-sheet.pdf) to look up the different SQL commands.
 
-
-# Step 3: Practice problems
-
-> ## SQL example #1
+> ## Counting numbers of offenses
 >
-> Try to write a query to answer our first question from our data exploration effort with the original .csv file:
+> _How many "TRESPASS" offenses occurred in total?_
 >
+> Hint: fill in the ? below:
 > ~~~
-> SELECT ? FROM ?
+> SELECT ? FROM ? WHERE ? = ?
 > ~~~
 > {: .sql}
 >
 > > ## Solution
 > >
-> > Here is the solution
+> > Here is the solution:
 > >
 > > ~~~
-> > SELECT COUNT(*) FROM
+> > SELECT COUNT(*) FROM seattlecrimeincidents WHERE "Offense Type" = 'TRESPASS'
 > > ~~~
 > > {: .sql}
 > {: .solution}
 {: .challenge}
 
-> ## How many "TRESPASS" offenses occurred in total?
-> Hint: substitude with the appropriate variable or SQL command below
-{: .challenge}
+> ## Single and double quotes in SQL
+> Notice that in our example above we had both single and double quotes. Here's the rule:
+> * use _double_ quotes for column names within the database 
+> * use _single_ quotes for strings or date/time constants
+> Note that we only have to use double quotes for the column names because this particular data table did not follow the standards of database
+> convention (i.e. the names have spaces in them). See [this discussion](https://stackoverflow.com/questions/1992314/what-is-the-difference-between-single-and-double-quotes-in-sql) for more details.
+{: .callout}
+
+<br>
 
 >## Calculating several values at a time
->_What is the range of the latitude and longitude coordinates of all crimes?_
+> _What is the range of the latitude and longitude coordinates of all crimes?_
 > Hint: use "max" and "min" functions.
 {: .challenge}
 
@@ -86,7 +86,6 @@ This gives us the number of the rows in the table.
 >_What is the number of bike thefts in the month of january?_
 {: .challenge}
 
-You can use this [cheatsheet](http://www.sql-tutorial.net/sql-cheat-sheet.pdf) to look up the different SQL commands.
 
 # Grouping discussion
 > TODO: Add some conceptual stuff about grouping
@@ -220,24 +219,3 @@ SELECT crimeTable.CT,cast(crimeTable.count as float)/censusTable.population as c
 > {: .solution}
 {: .challenge}
  
-
-
----
-
-title: "Introduction to Databases"
-teaching: 15
-exercises: 0
-questions:
-- "What is a database?"
-- "How are data structured within a database?"
-- "What are the advantages of working with data in a database?"
-objectives:
-- "Learn the fundamentals of the relational data model"
-- "Begin to identify in which cases it makes sense to put your data in a database"
-- "Learn a bit of Structured Query Language (SQL)"
-- "Learn about some of the specific rules of how to structure a database"
-key points:
-- "Databases offer a highly structured framework for storing and manipulating data"
-- "Setting up this structure takes some time"
-- "Advantages include the ability to investigate complex relationships between data using a simple query language"
----
