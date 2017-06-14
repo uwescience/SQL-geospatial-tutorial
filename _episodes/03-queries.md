@@ -78,7 +78,6 @@ This gives us the number of the rows in the table.
 
 >## Calculating several values at a time
 >_What is the range of the latitude and longitude coordinates of all crimes?_
-
 > Hint: use "max" and "min" functions.
 {: .challenge}
 
