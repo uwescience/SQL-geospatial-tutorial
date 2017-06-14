@@ -177,8 +177,48 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 
 
 # Joining two tables
+>
+>TODO: discussion on joining
 
+* Table 1: tract | crime_count
+> ~~~
+> SELECT round("census tract 2000"),count(*) FROM seattlecrimeincidents
+	group by "census tract 2000"
+	ORDER BY "census tract 2000" ASC;
+>~~~
 
+* Table 2: tract | population
+> ~~~
+> SELECT "Census Tract","Total Population, 2010" as population from census_data
+	ORDER BY "Census Tract" ASC;
+> ~~~
+
+> ## Join with where command
+> 
+>> ## Solution
+>> ~~~
+SELECT crimeTable.CT,cast(crimeTable.count as float)/censusTable.population as crime_rate from
+	(select round("census tract 2000") as CT, count(*) as count from SeattleCrimeIncidents group by "census tract 2000") as crimeTable,
+    (select "Total Population, 2010" as population,"Census Tract" as CT from census_data) as censusTable
+    where crimeTable.CT = censusTable.CT order by "crime_rate" DESC;
+> > ~~~
+> > {: .sql}
+> {: .solution}
+{: .challenge}
+
+> ## Join with a join command
+>
+> > ## Solution 
+> > ~~~ 
+> > select crimeTable.CT,crimeTable.count::float/censusTable.population::float as crime_rate from 
+	(select round("census tract 2000") as CT, count(*) as count from SeattleCrimeIncidents group by "census tract 2000") crimeTable
+    join 
+    (select "Total Population, 2010" as population,"Census Tract" as CT from census_data) censusTable
+    on crimeTable.CT = censusTable.CT order by "crime_rate" DESC;
+> > ~~~
+> >{: .sql}
+> {: .solution}
+{: .challenge}
  
 
 
