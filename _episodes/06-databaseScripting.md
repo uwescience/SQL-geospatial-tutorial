@@ -10,7 +10,7 @@ keypoints:
 
 #### Interfacing with the database from Python:
 
-We will use [pandas](pandas.pydata.org) which is a data analysis toolkit that happens to have some very simple methods for moving data to and from a database. The datbase connections are handled through pandas using [sqlalchemy](www.sqlalchemy.org).
+We will use [pandas](pandas.pydata.org) which is a data analysis toolkit that happens to have some very simple methods for moving data to and from a database. The database connections are handled through pandas using [sqlalchemy](www.sqlalchemy.org).
 
 ```Python
 import pandas as pd
@@ -32,6 +32,17 @@ Now we can issue a query to the database as follows:
 ```Python
 df =pd.read_sql('SELECT * FROM seattlecrimeincidents LIMIT 100', engine)
 ```
+
+##### Connecting from a Jupyter Notebook
+
+Within a Jupyter notebook we can actually directly type SQL queries in a cell using an ipython magic. For that we need to install the [ipython-sql](https://pypi.python.org/pypi/ipython-sql) package:
+
+```
+pip install ipython-sql
+```
+
+
+To test your installation, you can run all cells of the [TestConnection.ipynb](../code/TestConnection.ipynb) notebook. In the second cell you will have to substitute the word password with the real password for the database.
 
 #### Interfacing with the database from R:
 
