@@ -74,24 +74,68 @@ This gives us the number of the rows in the table.
 
 > ## How many "TRESPASS" offenses occurred in total?
 > Hint: substitude with the appropriate variable or SQL command below
-> test
-> test
 {: .challenge}
 
-* Can you obtain the range of the latitude and longitude coordinates of all crimes? 
+>## Calculating several values at a time
+>_What is the range of the latitude and longitude coordinates of all crimes?_
 
 > Hint: use "max" and "min" functions.
 {: .challenge}
 
-* Extra. Combine a few conditions together:
 
- _What is the number of bike thefts in the month of january?_
+>## Combining conditions
+>_What is the number of bike thefts in the month of january?_
+{: .challenge}
 
 You can use this [cheatsheet](http://www.sql-tutorial.net/sql-cheat-sheet.pdf) to look up the different SQL commands.
 
+# Grouping discussion
+> TODO: Add some conceptual stuff about grouping
 
+* Count how many offenses are for each Offense Type
+```select "Offense Type",count(*) from SeattleCrimeIncidents
+	group by "Offense Type" order by count ASC;```
+
+Note: for homicide we see there are a lot of types of homicides -> use summarized offense description
+
+* Count how many offenses are for each Summarized Offense Description
+```select "Summarized Offense Description", count(*) from SeattleCrimeIncidents
+	group by "Summarized Offense Description";```
+
+* Count how many offenses per year
+```select year, count(*) from SeattleCrimeIncidents
+	group by year;```
+
+>## Crimes for each month?
+>>##Solution
+>>
+>>SELECT month,count(*) FROM seattlecrimeincidents GROUP BY month ORDER BY month ASC
+>>{.sql}
+>{.solution}
+{: .challenge}
+
+
+>## Month with highest number of bike thefts?
+>>##Solution
+>>SELECT month,count(*) FROM seattlecrimeincidents
+	WHERE "Offense Type" = 'THEFT-BICYCLE'
+	GROUP BY month
+	ORDER BY count DESC
+>>{.sql}
+>{.solution}
+{: .challenge}
+
+>## Number of crimes per census tract?
+>>##Solution
+>>SELECT "census tract 2000",count(*) FROM seattlecrimeincidents
+	group by "census tract 2000"
+	ORDER BY "census tract 2000" ASC;
+>>{.sql}
+>{.solution}
+{: .challenge}
 
  
+
 
 ---
 
