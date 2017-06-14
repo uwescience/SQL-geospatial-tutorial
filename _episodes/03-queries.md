@@ -15,7 +15,7 @@ key points:
 
 ## Issuing your first queries
 
-Queries can be issued to the database in many different ways. Here we'll use the SQL query window in pg_admin. This is a great way to test out ideas before implementing your SQL queries in a script.
+Queries can be issued to the database in many different ways. Here we'll use the SQL query window in DBeaver. This is a great way to test out ideas before implementing your SQL queries in a script.
 
 <br>
 1. click on the "SQL Editor" button:
