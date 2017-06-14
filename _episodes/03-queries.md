@@ -151,6 +151,7 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 # Ideas of aliasing and nesting
 
 * adding better column names
+
 > ~~~
 > SELECT "census tract 2000" as "CensusTract",count(*) as "crime_count" FROM seattlecrimeincidents
 	group by "census tract 2000"
@@ -176,8 +177,29 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 
 
 # Joining two tables
+
+
+> _Which census tract has the highest crime rate?_
+> 
+> * Can we answer this question using the SeattleCrimeIncidentsTable?
+> 
+> To calculate the crime rate we need to have the population of each census tract. This is missing from the SeattleCrimeIncidents Table. However, in the database there is another table called census containing the population per tract. 
+> 
+> ~~~
+> SELECT * from census LIMIT 10
+> ~~~
+> {. :sql}
 >
->TODO: discussion on joining
+> * What minimal database we need to answer the question?
+> a table with census tract | # crimes/ population
+> 
+> * What is the common key on which we can join the two tables?
+> 
+> 
+>
+> 
+
+> To simplify the join we can create the following two tables: 
 
 * Table 1: tract | crime_count
 > ~~~
@@ -191,6 +213,10 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 > SELECT "Census Tract","Total Population, 2010" as population from census_data
 	ORDER BY "Census Tract" ASC;
 > ~~~
+> 
+> Then we can join them where the corresponding tracts are equal.
+> 
+> Hint: be careful about how division is performed in SQL. You might need to use a function which converts integers to floats (you can do this with `variable::float`)
 
 > ## Join with where command
 > 
