@@ -22,12 +22,15 @@ import sqlalchemy.types as types
 Our next step is to pass some database connection information to pandas/sqlalchemy so that we can establish a connection. We create a database "engine" object that is then used in subsequent operations as a portal to/from the database.
 
 ~~~
-host = 'someurl.amazonaws.com'
-user = 'myusername'
-password = 'mysecretpassword'
-port = '5432'
-dbname = 'databasename'
-engine = create_engine('postgresql://' + user + ':' + password + '@' + host + ':' + port + '/' + dbname)
+db_info = {
+    'host': 'someurl.amazonaws.com',
+    'user': 'myusername',
+    'password': 'mysecretpassword',
+    'port': 5432,
+    'dbname': 'databasename'
+}
+sql_str = 'postgresql://{user}:{password}@{host}:{port}/{dbname}'.format
+engine = create_engine(sql_str(**db_info))
 ~~~
 {: .python}
 
