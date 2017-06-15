@@ -22,10 +22,11 @@ keypoints:
 * a database is a software system for _capturing_, _storing_ and _analyzing_ data. 
 * nearly all databases use the _relational_ data model in which information is structured in row and column format: 
 
-<br><br>
-<img src="../assets/img/databaseIntro/terminology.png" width = "600" border = "10">
-<br><br><br>
+<img src="../assets/img/databaseIntro/terminology.png" width = "600">
 
+<br>
+
+---
 ## Motivation for using a database
 
 * fast searching
@@ -45,29 +46,27 @@ keypoints:
 * standard language for relational databases
 * across different databases the core syntax is similar but there are small differences in some function names
 
+<br>
+
+---
 ## Creating a database table:
 
 * before adding any data to a database it is necessary to create a table
 * here is an example using some of the information from our sample crimes dataset:
 
-```SQL
-CREATE TABLE seattlecrimesincidents 
+~~~
+CREATE TABLE seattlecrimesincidents
     ("crimesID" int,
      "Offense type" character,
      "Offense code" int,
      "Date" timestamp,
-     "Location" character); 
-```
+     "Location" character);
+~~~
+{: .sql}
 
 * this command creates an empty table:
 
-<br>
-<hr>
-<br>
 <img src="../assets/img/databaseIntro/emptyDatabaseRow.png" width = "400" border = "10">
-<br>
-<hr>
-<br>
 
 ### Data Types
 
@@ -88,27 +87,23 @@ CREATE TABLE seattlecrimesincidents
 | xml |  | XML data |
 
 <br>
-<hr>
-<br>
 
-## populating the database records:
+---
+## Populating the database records:
 
 * here's an example of how we can insert data into a database:
 
-```SQL
+~~~
 INSERT INTO seattlecrimeincidents VALUES
 
     (1,'trespass', 5700,'2015-01-28 09:30:00','12XX Block of E Pike St'),
     
     (2,'larceny-theft',2300, '2015-02-21 08:24:21','15XX Block of Aurora St');
-```
+~~~
+{: .sql}
 
 * note that the order of the values insterted matches the order in which the column names were created
 * here is what the table looks like now:
-
-<br>
-<hr>
-<br>
 
 | crimesID | Offense type | Offense code | Date | Location | 
 | ---- | ---- | ----- | ---- | ---- | ---- |
@@ -116,21 +111,19 @@ INSERT INTO seattlecrimeincidents VALUES
 |   2 | larceny-theft | 2300 |  2015-02-21 08:24:21 | 15XX Block of Aurora St | 
 
 <br>
-<hr>
-<br>
 
+---
 ## Database rules:
 
-* all databases adhere to strict rules about how the data are structured
+**All databases adhere to strict rules about how the data are structured**
 
+---
 ### Normalization
 
 * all row elements must contain a unique piece of information
 * this [normalization](https://en.wikipedia.org/wiki/Database_normalization) of your tables will minimize redundancy
 * for example, suppose we tried to list two offenses at the same time, in the same row: 
 
-<br>
-<hr>
 <br>
 
 | crimesID | Offense type | Offense code | Date | Location | 
@@ -139,14 +132,10 @@ INSERT INTO seattlecrimeincidents VALUES
 |  2 | larceny-theft | 2300 |  2015-02-21 08:24:21 | 15XX Block of Aurora St |
 
 <br>
-<hr>
-<br>
 
 * this is incorrect because the database will have problems searching these columns
 * the solution to this problem is simply to create another row:
 
-<br>
-<hr>
 <br>
 
 | crimesID | Offense type | Offense code | Date | Location | 
@@ -156,17 +145,14 @@ INSERT INTO seattlecrimeincidents VALUES
 |    3 |  larceny-theft |  2300 |   2015-02-21 08:24:21 |   15XX Block of Aurora St |
 
 <br>
-<hr>
-<br>
 
+---
 ### NULL Values
 
 * missing data are a common feature of many datasets
 * many datasets encode missing data inconsistently (e.g. with "X" or -9999) 
 * in this example, the code for "tresspass" is not known so the data entry is "X"
 
-<br>
-<hr>
 <br>
 
 | crimesID | Offense type | Offense code | Date | Location | 
@@ -176,8 +162,6 @@ INSERT INTO seattlecrimeincidents VALUES
 |    3 |  larceny-theft |  2300 |   2015-02-21 08:24:21 |   15XX Block of Aurora St |
 
 <br>
-<hr>
-<br>
 
 * to solve this, the relational databases introduced NULL values:
     * NULL is a state representing a lack of a value
@@ -186,21 +170,20 @@ INSERT INTO seattlecrimeincidents VALUES
 
 <br>
 
+---
 ### Selecting Data:
 
-* one of the most common operations on a SQL table is to ```SELECT``` data
+* one of the most common operations on a SQL table is to `SELECT` data
 * here we select based on a specific offense code:
 
-```SQL
+~~~
 SELECT "Offense type", "Offense code", "Date", "Location"
    FROM seattlecrimeincidents 
    WHERE "Offense code" = 5700;
-```
+~~~
+{: .sql}
+* note we are using a `WHERE` clause to select specific rows
 
-* note we are using a "WHERE" clause to select specific rows
-
-<br>
-<hr>
 <br>
 
 | crimesID | Offense type | Offense code | Date | Location | 
@@ -208,19 +191,17 @@ SELECT "Offense type", "Offense code", "Date", "Location"
 |  1 | tresspass | 5700 | 2015-01-28 09:30:00 |  12XX Block of E Pike St |
 
 <br>
-<hr>
-<br>
 
 * this example shows how to use a comma separated list to select specific columns:
 
 * selecting data:
-```SQL
+
+~~~
 SELECT "Offense type", "Date" 
    FROM seattlecrimeincidents;
-```
+~~~
+{: .sql}
 
-<br>
-<hr>
 <br>
 
 | Offense type | Date | 
@@ -229,42 +210,32 @@ SELECT "Offense type", "Date"
 | larceny-theft | 2015-02-21 08:24:21 |  
 
 <br>
-<hr>
-<br>
 
+---
 ## Functions
 
 * databases have a wide range of functions that can operate on row elements
-* one of the most common functions is to extract a subset of a date (e.g. year, hour) from a column with type = "timestamp"
+* one of the most common functions is to extract a subset of a date (e.g. year, hour) from a column with type = **"timestamp"**
 
-<br>
-<hr>
-<br>
-
-```SQL
+~~~
 SELECT "Date Reported", date_part('hour', "Date Reported")
 FROM seattlecrimeincidents
 LIMIT 5;
-```
-
-<br>
-<hr>
-<br>
+~~~
+{: .sql}
 
 * Databases also have aggregate functions used on sets of data
-* examples include SUM(), MAX(), MIN(), AVG(), COUNT(), STDDEV()
+* examples include `SUM()`, `MAX()`, `MIN()`, `AVG()`, `COUNT()`, `STDDEV()`
 
+---
 ## Data Analysis:
 
 * databases have powerful methods for analyzing data
 * one of the most common tasks: applying statistics across groups
 * to accomplish this we need to learn 
-    * how to GROUP sets of data
+    * how to `GROUP` sets of data
     * how to apply statistical functions to those groups
 
-
-<br>
-<hr>
 <br>
 
 | crimesID |  Offense code | Date | Location | Damage | 
@@ -276,29 +247,23 @@ LIMIT 5;
 |    3 |  2300 |   2015-02-21 08:24:21 |   15XX Block of Aurora St |  \$2,405 |
 
 <br>
-<hr>
-<br>
 
-* suppose we aslk: "What is the total damage that occurred for each offense type?""
-* to answer this, first we need to group the data by "Offense code":
+* suppose we ask:
+    > "What is the total damage that occurred for each offense type?"
+* to answer this, first we need to `GROUP` the data by **"Offense code"**:
 
-<br>
-<hr>
 <br>
 <img src="../assets/img/databaseIntro/groupedTable.png" width = "600">
+
 <br>
-<hr>
 <br>
 
-```SQL
+~~~
 SELECT SUM("Damage") 
    FROM seattlecrimeincidents
    GROUP BY "Offense code";
-```
-
-<br>
-<hr>
-<br>
+~~~
+{: .sql}
 
 | Offense code | totalDamage | 
 |   ---- | ---- |
@@ -307,21 +272,17 @@ SELECT SUM("Damage")
 |  2300  | \$2,405 |
 
 <br>
-<hr>
-<br>
 
-#### Column aliasing:
+---
+### Column aliasing:
 * often we want to rename newly generated columns:
 
-```SQL
+~~~
 SELECT "Date Reported", date_part('hour', "Date Reported") AS "reported hour"
 FROM seattlecrimeincidents
 LIMIT 5;
-```
-
-<br>
-<hr>
-<br>
+~~~
+{: .sql}
 
 | Date Reported | reported hour |
 | ----- | ----- |
@@ -332,20 +293,15 @@ LIMIT 5;
 | 2015-01-27 04:25:00 | 4.0 |
 
 <br>
-<hr>
-<br>
 
+---
 ### Joining Tables
 
 * well designed databases distribute data across multiple tables, for efficiency
 * then we can JOIN data between tables as needed
 
 <br>
-<hr>
-<br>
 <img src="../assets/img/databaseIntro/joinTables.png" width = "600">
-<br>
-<hr>
 <br>
 
 ### Database Implementation:
@@ -364,11 +320,7 @@ LIMIT 5;
    * hostname, port, user, password
 
 <br>
-<hr>
-<br>
-<img src="../assets/img/databaseIntro/databaseDiagram.png" width = "600">
-<br>
-<hr>
-<br>
+<img src="../assets/img/databaseIntro/databaseDiagram.png" width="600"
+style="padding-bottom: 30px;">
 
    
