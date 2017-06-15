@@ -110,7 +110,12 @@ WHERE table_name = 'seattlecrimeincidents' AND (column_name = 'Latitude' OR colu
 ~~~
 {: .sql}
 
-* It would be better if the database understands latitude and longitude as locations rather than as double precision numbers.
+| column_name | data_type | 
+| ------ | ------- |
+| Longitude | double precision |
+| Latitude | double precision |
+
+* we see from this query that the spatial data format is double precision
 
 > ## PostGIS: a geospatial database extension 
 > * many databases, have extensions that allow for encoding of geospatial information
@@ -137,9 +142,10 @@ ALTER TABLE seattlecrimeincidents ADD COLUMN geom geometry(Point, 4326);
 | 1 | 47.6158384| -112.3181689 | |
 | 2 | 47.60087709 | -112.3312162 | | 
 
-
 > ## Spatial Reference System Identifier (SRID)
 > - `4326` is the *SRID* for the geographic (latitude/longitude) coordinate system
+> - SRIDs are a convenient way to keep track of the hundreds of different reference systems
+> - another label for these is `EPSG` and you can access the list of codes [here](http://www.epsg.org/)
 {: .callout}
 
 ~~~
@@ -204,7 +210,6 @@ UPDATE seattlecrimeincidents SET geom = ST_setSRID(ST_MakePoint(longitude, latit
 > How does this result compare to the distance we calculated from the latitude/longitude data alone?
 > What explains the difference?
 {: .discussion}
-
 
 > ## What is the most common crime within 1 km of my house?
 > 1. Find the coordinates of your house (or some other feature in the Seattle region).
