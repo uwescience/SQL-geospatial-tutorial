@@ -18,36 +18,36 @@ keypoints:
 
 Queries can be issued to the database in many different ways. Here we'll use the SQL query window in DBeaver. This is a great way to test out ideas before implementing your SQL queries in a script.
 
-<br>
 1. click on the "SQL Editor" button:
-<br><br>
-<img src="../assets/img/connection/sqleditor.png" width = "400" border = "10">
-<br><br>
+
+    <img src="../assets/img/connection/sqleditor.png" width = "400">
+
 2. This should bring up a new tab:
-<br><br>
-<img src="../assets/img/connection/sqleditorview.png" width = "400" border = "10">
-<br><br>
-The upper pane is where we will issue our query, and the results of the query will be shown in the results pane below.
-<br><br>
+
+    <img src="../assets/img/connection/sqleditorview.png" width = "400">
+
+    *The upper pane is where we will issue our query, and the results of the query will be shown in the results pane below.*
+
 3. Submit your first query by typing the following into the SQL pane:
-<br><br>
-```sql
-SELECT * FROM seattlecrimeincidents LIMIT 100;
-```
 
-* the "LIMIT" command restricts the database to return only the first 100 rows.
-* the `*` is a wildcard requesting all columns from the database.
-<br>
-<hr>
+    ~~~
+    SELECT * FROM seattlecrimeincidents LIMIT 100;
+    ~~~
+    {: .sql}
+
+    * the `LIMIT` command restricts the database to return only the first 100 rows.
+    * the `*` is a wildcard requesting all columns from the database.
+
 <br>
 
+---
 # Practice problems
 
 In the following exercises you can use this [cheatsheet](http://www.sql-tutorial.net/sql-cheat-sheet.pdf) to look up the different SQL commands.
 
 > ## Counting numbers of offenses
 >
-> _How many "TRESPASS" offenses occurred in total?_
+> _How many **"TRESPASS"** offenses occurred in total?_
 >
 > Hint: fill in the ? below:
 > ~~~
@@ -78,6 +78,7 @@ In the following exercises you can use this [cheatsheet](http://www.sql-tutorial
 
 >## Calculating several values at a time
 > _What is the range of the latitude and longitude coordinates of all crimes?_
+>
 > Hint: use "max" and "min" functions.
 {: .challenge}
 
@@ -86,7 +87,9 @@ In the following exercises you can use this [cheatsheet](http://www.sql-tutorial
 >_What is the number of bike thefts in the month of january?_
 {: .challenge}
 
+<br>
 
+---
 # Grouping discussion
 > TODO: Add some conceptual stuff about grouping
 
@@ -148,6 +151,9 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 > {: .solution}
 {: .challenge}
 
+<br>
+
+---
 # Ideas of aliasing and nesting
 
 * adding better column names
@@ -175,7 +181,9 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 > ~~~
 > {: .sql}
 
+<br>
 
+---
 # Joining two tables
 
 
@@ -184,11 +192,11 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 > * Can we answer this question using the SeattleCrimeIncidentsTable?
 > 
 > To calculate the crime rate we need to have the population of each census tract. This is missing from the SeattleCrimeIncidents Table. However, in the database there is another table called census containing the population per tract. 
-> 
+>
 > ~~~
 > SELECT * from census LIMIT 10
 > ~~~
-> {. :sql}
+> {: .sql}
 >
 > * What minimal database we need to answer the question?
 > a table with census tract | # crimes/ population
@@ -207,12 +215,14 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 	group by "census tract 2000"
 	ORDER BY "census tract 2000" ASC;
 >~~~
+>{: .sql}
 
 * Table 2: tract | population
 > ~~~
 > SELECT "Census Tract","Total Population, 2010" as population from census_data
 	ORDER BY "Census Tract" ASC;
 > ~~~
+>{: .sql}
 > 
 > Then we can join them where the corresponding tracts are equal.
 > 
