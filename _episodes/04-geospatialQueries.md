@@ -17,7 +17,8 @@ keypoints:
 
 ## Calculating distances
 
-* our last research question was: "What is the most common crime within 5 km of my house?"
+* our last research question was:
+    > **What is the most common crime within 5 km of my house?**
 * To answer this we'll need to understand something about mapping, and how databases encode spatial information.
 * Note that the database currently has latitude and longitude information, for example:
 
@@ -28,9 +29,6 @@ LIMIT 5;
 ~~~
 {: .sql}
 
-<br>
-<hr>
-
 | Latitude | Longitude |
 | ---- | ---- |
 | 47.6158384 | -122.3181689 |
@@ -39,7 +37,6 @@ LIMIT 5;
 | 47.6140991 | -122.3174884 |
 | 47.63148825 | -122.3125079 |
 
-<hr>
 <br>
 
 * latitude and longitude are components of the _Geographic_ reference frame and are the most common ways to encode geospatial information:
@@ -75,28 +72,35 @@ Estimated distance is 2.207 km
 > * Are distances between lines of latitude always the same? Between lines of longitude?
 {: .discussion}
 
+<br>
+
+---
 ## Map Projections
 
 * often we need to convert a 3D earth to a 2D plane
-* this is necesary for accurate calculation of distances, bearing and area calculations
+* this is necessary for accurate calculation of distances, bearing and area calculations
 
 <img src="../assets/img/databaseIntro/projections2.png" width = "600">
 
-<br><br><br>
+<br>
+
 * in a general sense, projection is similar to shining a light through a transparent sphere and tracing the lines of lat/long
 
 <img src="../assets/img/databaseIntro/projections.png" width = "500">
 
-<br><br><br>
+<br>
+
 * there are numerous different map projections, each optimized for different types of applications and calculations
 
 <img src="../assets/img/databaseIntro/projectionTypes.png" width = "650">
 
 <br>
 
+---
 ## Encoding of geospatial information
 
-* How does the database currently encode the latitude and longitude information?
+> **How does the database currently encode the latitude and longitude information?**
+
 * We can determine this by querying the database for information on the type of column variables:
 
 ~~~
@@ -114,6 +118,9 @@ WHERE table_name = 'seattlecrimeincidents' AND (column_name = 'Latitude' OR colu
 > * our sample database already has the PostGIS extension installed and enabled
 {: .callout}
 
+<br>
+
+---
 ## Database Geometries
 
 * encoding of geospatial information occurs within a new _geometry_ column:
@@ -121,7 +128,7 @@ WHERE table_name = 'seattlecrimeincidents' AND (column_name = 'Latitude' OR colu
 ~~~
 ALTER TABLE seattlecrimeincidents ADD COLUMN geom geometry(Point, 4326);
 ~~~
-{:. sql}
+{: .sql}
 
 * this adds an empty geometry column:
 
@@ -131,12 +138,14 @@ ALTER TABLE seattlecrimeincidents ADD COLUMN geom geometry(Point, 4326);
 | 2 | 47.60087709 | -112.3312162 | | 
 
 
-* note that '4326' is the code for the geographic (latitude/longitude) coordinate system 
-* Next, populate the geometry column:
+> ## Spatial Reference System Identifier (SRID)
+> - `4326` is the *SRID* for the geographic (latitude/longitude) coordinate system
+{: .callout}
 
-```SQL
-UPDATE seattlecrimeincidents SET geom = ST_setSRID(ST_MakePoint(longitude,latitude),4326);
-```
+~~~
+UPDATE seattlecrimeincidents SET geom = ST_setSRID(ST_MakePoint(longitude, latitude), 4326);
+~~~
+{: .sql}
 
 | Point | Latitude | Longitude | geom | 
 | ---- | ---- | ---- | ---- |
@@ -145,39 +154,47 @@ UPDATE seattlecrimeincidents SET geom = ST_setSRID(ST_MakePoint(longitude,latitu
 
 * the actual content of the _geom_ column is a binary string read by PostGIS
 * Now that the database has geometric encoding, we can use a wide range of geospatial functions
+
 <br>
 
+---
 ## Geospatial functions
 
 * often we receive geospatial information in various different projections and/or coordinate systems
 * PostGIS provides mechanisms for us to _transform_ between different systems
-* here we will transform our geometries into a _projected_ coordinate system so that we can calculate distances  
+* here we will transform our geometries into a _projected_ coordinate system so that we can calculate distances
+
+1. We add a new column that has a projected geometry
+    * in this case we will use 'Universal Transverse Mercator Zone 10 North', which has a SRID of 3717:
+
+    ~~~
+    ALTER TABLE seattlecrimeincidents
+    ADD COLUMN geom_utm geometry(Point, 3717);
+    ~~~
+    {: .sql}
+
+2. Now we carry out the transformation
+
+    ~~~
+    UPDATE seattlecrimeincidents
+    SET geom_utm = ST_Transform(geom,3717);
+    ~~~
+    {: .sql}
+
+    * note that all PostGIS functions begin with `ST` which means **"Spatial Tool"**
+
+3. Now we can recalculate our distance using a built-in PostGIS distance function:
+
+    ~~~
+    SELECT ST_Distance(a.geom_utm,b.geom_utm)
+    FROM seattlecrimeincidents AS a, seattlecrimeincidents AS b
+    WHERE a.gid=1 AND b.gid=2;
+    ~~~
+    {: .sql}
 
 <br>
-* first we add a new column that has a projected geometry
-* in this case we will use 'Universal Transverse Mercator Zone 10 North', which has an ID of 3717:
 
-```SQL
-ALTER TABLE seattlecrimeincidents 
-ADD COLUMN geom_utm geometry(Point, 3717);
-```
-
-* now we carry out the transformation
-
-```SQL
-UPDATE seattlecrimeincidents 
-SET geom_utm = ST_Transform(geom,3717);
-```
-* note that all PostGIS functions begin with "ST" which means "Spatial Tool"
-* now we can recalculate our distance using a built-in PostGIS distance function:
-
-```SQL
-SELECT ST_Distance(a.geom_utm,b.geom_utm)
-FROM seattlecrimeincidents AS a, seattlecrimeincidents AS b
-WHERE a.gid=1 AND b.gid=2;
-```
-
-* the result is:
+#### Result
 
 | st_distance |
 | ---- |
@@ -191,10 +208,10 @@ WHERE a.gid=1 AND b.gid=2;
 
 > ## What is the most common crime within 1 km of my house?
 > 1. Find the coordinates of your house (or some other feature in the Seattle region).
-> HINT: you can use google maps to find the latitude and longitude of any map location
+> *HINT: you can use google maps to find the latitude and longitude of any map location*
 > 2. Build the SQL query. You will need to nest 4 different functions to do this:
-> * ST_MakePoint: to make a vector point geometry from your lat/long coordinate pair
-> * ST_SetSRID: to tell the database which SRID your lat/long pair conforms to
-> * ST_Transform: to transform your point geomtery to a projected coordinate system (use UTM Zone 10, '3717')
-> * ST_Distance: to calculate the distance between all the geometries in the database and your single point
+> * `ST_MakePoint`: to make a vector point geometry from your lat/long coordinate pair
+> * `ST_SetSRID`: to tell the database which SRID your lat/long pair conforms to
+> * `ST_Transform`: to transform your point geomtery to a projected coordinate system (use UTM Zone 10, '3717')
+> * `ST_Distance`: to calculate the distance between all the geometries in the database and your single point
 {: .challenge}
