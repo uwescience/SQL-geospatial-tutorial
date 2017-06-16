@@ -30,4 +30,9 @@ keypoints:
 > ## Challenge: Try to make a map like this!
 > <img src="../assets/img/databaseIntro/crimeradius.png" width="300">
 {: .challenge}
+
+## Additional resources
+
+* [Geopandas](http://geopandas.org/) is a Python library that can be used to manipulate and plot vector geospatial data
+* Visit our [geohackweek tutorial](https://geohackweek.github.io/vector/) on Geopandas for more information and examples.
  
