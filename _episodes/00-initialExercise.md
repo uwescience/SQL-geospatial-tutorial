@@ -12,21 +12,6 @@ keypoints:
 - "There are many different ways to explore the same dataset"
 ---
 
-## Exploration of Seattle Crimes data
-
-* our lesson will use data from the [City of Seattle](https://data.seattle.gov/) to explore database functionality
-* the City of Seattle has information on all reported crimes incidents since 2011 [Crime Incidents](https://data.seattle.gov/Public-Safety/Crime-incidents-after-2011/8pyp-fumz)
-* we will use a 2015 data table where each row is a different crime incident
-
-<!---
-<br><br>
-<img src="../assets/img/databaseIntro/crimesSeattle.png" width = "600" border = "10">
-<br>
---->
-
-#### click [here](https://github.com/uwescience/SQL-geospatial-tutorial/blob/gh-pages/files/SeattleCrimeIncidents.csv) to access the comma-separated-value file
-
----
 ## Research Questions
 
 In our examples for subsequent lessons, we will be guided by the following five research questions:
