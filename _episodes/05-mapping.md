@@ -3,8 +3,12 @@ title: "Mapping"
 teaching: 10
 exercises: 20
 questions:
+- "How do I plot the results of spatial queries on a map?"
 objectives:
+- "Learn about the various options for visualizing geospatial datasets."
 keypoints:
+- "GIS software provides a graphical user interface for running geospatial queries and making maps of the results"
+- "QGIS is a particularly good software for interfacing with PostGIS"
 ---
 
 #### Plotting your data on a map:
@@ -26,3 +30,4 @@ keypoints:
 > ## Challenge: Try to make a map like this!
 > <img src="../assets/img/databaseIntro/crimeradius.png" width="300">
 {: .challenge}
+ 

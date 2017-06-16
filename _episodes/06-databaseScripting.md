@@ -3,8 +3,12 @@ title: "Scripting database connections in Python/R"
 teaching: 10
 exercises: 20
 questions:
+- "How do we issue database queries from a Python or R script?"
 objectives:
+- "Learn about the protocols for connecting to a database from scripts"
 keypoints:
+- "All database functionality can be accessed through Python or R scripts"
+- "This is an important way to ensure reproducibility and transferability of our work"
 ---
 
 
