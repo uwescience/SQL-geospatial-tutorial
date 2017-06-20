@@ -3,15 +3,16 @@ title: "SQL Queries"
 teaching: 10
 exercises: 20
 questions:
-- "What is the syntax of the Structured Query Language (SQL)?"
-- "How do I issue SQL queries to the database?"
-- "What is the advantage of using SQL over other languages?"
+- "How do I extract information from a table in a database?"
+- "How can I create summary statistics of a data set?"
+- "How can I combine information from several tables?"
 objectives:
 - "Learn how to issue a SQL query within DBeaver"
-- "Become acquainted with the general structure of a SQL query"
-- "Explore some of the advantages SQL offers over other approaches"
+- "Learn basic SQL syntax: SELECT, FROM, WHERE, GROUP BY, ORDER,..."
+- "Build complex queries from simple queries"
+- "Learn how to join two tables on a common key"
 keypoints:
-- "SQL provides a simple yet powerful set of tools for performing anaylsis on your data"
+- "SQL provides a simple yet powerful set of tools for performing anaylis on your data"
 ---
 
 ## Issuing your first queries
