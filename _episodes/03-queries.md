@@ -85,7 +85,9 @@ In the following exercises you can use this [cheatsheet](http://www.sql-tutorial
 >
 > Hint: use "max" and "min" functions.
 > > ## Solution
+> > ~~~
 > > SELECT min(longitude), max(longitude),min(latitude),max(latitude) FROM seattlecrimeincidents
+> > ~~~
 > > {: .sql}
 > {: .solution}
 {: .challenge}
@@ -96,8 +98,10 @@ In the following exercises you can use this [cheatsheet](http://www.sql-tutorial
 >
 > Hint: the name for bike thefts is 'THEFT-BICYCLE'.
 > > ## Solution
+> > ~~~
 > > SELECT count(*) FROM seattlecrimeincidents
         WHERE "Offense Type" = 'THEFT-BICYCLE' and month = 1
+> > ~~~
 > > {: .sql}
 > {: .solution}
 {: .challenge}
