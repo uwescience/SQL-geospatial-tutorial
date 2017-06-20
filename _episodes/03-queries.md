@@ -74,6 +74,10 @@ In the following exercises you can use this [cheatsheet](http://www.sql-tutorial
 > convention (i.e. the names have spaces in them). See [this discussion](https://stackoverflow.com/questions/1992314/what-is-the-difference-between-single-and-double-quotes-in-sql) for more details.
 {: .callout}
 
+> ## Upper/lower case: does it matter?
+> Most versions of the SQL language are not case sensitive, but it is a good habbit to make key words capital so that the queries are easy to read. The only time when the case matters is whne the word is in quotes and refers to a name.
+{: .callout}
+
 <br>
 
 >## Calculating several values at a time
