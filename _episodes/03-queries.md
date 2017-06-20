@@ -84,18 +84,31 @@ In the following exercises you can use this [cheatsheet](http://www.sql-tutorial
 > _What is the range of the latitude and longitude coordinates of all crimes?_
 >
 > Hint: use "max" and "min" functions.
+> > ## Solution
+> > SELECT min(longitude), max(longitude),min(latitude),max(latitude) FROM seattlecrimeincidents
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 
 >## Combining conditions
 >_What is the number of bike thefts in the month of january?_
+>
+> Hint: the name for bike thefts is 'THEFT-BICYCLE'.
+> > ## Solution
+> > SELECT count(*) FROM seattlecrimeincidents
+        WHERE "Offense Type" = 'THEFT-BICYCLE' and month = 1
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 <br>
 
 ---
-# Grouping discussion
-> TODO: Add some conceptual stuff about grouping
+# Grouping 
+* identify a variable according to which to group
+* identify a function to apply per groups
+
 
 * Count how many offenses are for each Offense Type
 >~~~
