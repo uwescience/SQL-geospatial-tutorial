@@ -45,14 +45,6 @@ WHERE c1.CT = c2.CT;
     * examine the attribute table of the joined layer 
 * we'll discuss how this is an example of performing "zonal statistics"
 
-## Visualizing ORCA transfer data
-
-The ORCA team has been exploring a .csv file containing information on ORCA transfers. Each row has a lat/long value that we can use to build a map visualization. Here is an example of how we can import data in csv format to a GIS (note this is a trimmed down version of the full 1 GB file!):
-
-* choose "layer/add vector layer/add delimited text layer". Browse to the orca_transfers.csv file.
-* provide a layer name and check that the X field and Y field contain longitude and latitude columns, respectively
-* click OK to load the data into the GIS
-* suppose we want to calculate the maximum number of transfers by census tract. Use the steps described above to perform a spatial join in the GIS to accomplish this.
 
 
 # Complex Spatial Queries
