@@ -11,6 +11,7 @@ objectives:
 - "Become familiar with some of the geospatial toolkits within PostGIS"
 keypoints:
 - "All geospatial analysis requires a knowledge of reference frames and coordinate systems"
+- "Be sure to use the correct coordinate system to match your analysis, otherwise you can get unexpected results"
 - "many databases have extensions that encode geospatial information (e.g. PostGIS)"
 - "PostGIS functions provide a wide range of tools to incorporate spatial analysis into your workflow"
 ---
@@ -43,10 +44,7 @@ LIMIT 5;
 
 <img src="../assets/img/databaseIntro/earthLatLong2.png" width = "600">
 
-> ## What is the straight line distance between points 1 and 2?
-> Point 1: 47.6158384, -112.3181689 
-> 
-> Point 2:  47.60087709, -112.3312162 
+> ## What is the straight line distance between the first two points in the table above?
 {: .challenge}
 
 <!--
@@ -66,7 +64,7 @@ Estimated distance is 2.207 km
 {: .output}
 -->
 
-> ## Calculating distances in geographic coordinates
+> ## DISCUSSION: Calculating distances in geographic coordinates
 > * is it possible for us to calculate straight line distances directly from latitude and longitude data?
 > * Why or why not?
 > * Are distances between lines of latitude always the same? Between lines of longitude?
