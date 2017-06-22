@@ -218,10 +218,7 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 >
 > | tract | #crimes/popuation |
 > | --- | --- |
-
-| Name | Aliases | Description |
-| --- | --- | --- |
-|  boolean | bool | logical Boolean (true/false) |
+> |  |  |
 > 
 > * What is the common key on which we can join the two tables?
 > 
@@ -232,9 +229,10 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 > To simplify the join we can create the following two tables: 
 >
 > * Table 1: 
-> tract | crime_count
+> tract | crime_count |
 > | tract   |      crime_count      |
-> |----------|:-------------:|
+> | --- | --- |
+> | | |
 >
 > ~~~
 > SELECT round("census tract 2000"),count(*) FROM seattlecrimeincidents
@@ -244,8 +242,9 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 >{: .sql}
 >
 > * Table 2: 
-> | tract   |      population     |
-> |----------|:-------------:|
+> | tract | population |
+> | --- | --- |
+> | | |
 >
 > ~~~
 > SELECT "Census Tract","Total Population, 2010" as population from census_data
