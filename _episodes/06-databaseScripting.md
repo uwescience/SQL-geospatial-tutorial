@@ -45,6 +45,20 @@ df = pd.read_sql('SELECT * FROM seattlecrimeincidents LIMIT 100', engine)
 ~~~
 {: .python}
 
+
+
+##### Connecting from a Jupyter Notebook
+
+Within a Jupyter notebook we can actually directly type SQL queries in a cell using an ipython magic. For that we need to install the [ipython-sql](https://pypi.python.org/pypi/ipython-sql) package:
+
+```
+pip install ipython-sql
+```
+
+
+To test your installation, you can run all cells of the [TestConnection.ipynb](../code/TestConnection.ipynb) notebook. In the second cell you will have to substitute the word password with the real password for the database.
+
+
 <br>
 
 ---
