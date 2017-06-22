@@ -218,7 +218,7 @@ To calculate the crime rate we need to have the population of each census tract.
 
  | tract | #crimes/popuation |
  | --- | --- |
- |  |  |
+ | . | . |
  
  * What is the common key on which we can join the two tables?
  
@@ -232,7 +232,7 @@ To simplify the join we can create the following two tables:
 
  | tract | crime_count |
  | --- | --- |
- | | |
+ | . | . |
 
  ~~~
  SELECT round("census tract 2000"),count(*) FROM seattlecrimeincidents
@@ -245,7 +245,7 @@ To simplify the join we can create the following two tables:
 
  | tract | population |
  | --- | --- |
- | | |
+ | . | . |
 
  ~~~
  SELECT "Census Tract","Total Population, 2010" as population from census_data
@@ -283,4 +283,7 @@ SELECT crimeTable.CT,cast(crimeTable.count as float)/censusTable.population as c
 > >{: .sql}
 > {: .solution}
 {: .challenge}
+
+> ## Which tract is which?
+> Here is a useful [map](https://www.seattle.gov/Documents/Departments/CivilRights/map-seattle.pdf) of Seattle cencus tracts (2010). Can you create a similar map with your favorite tool and color each tract by the crime rate. You can chech out the [Mapping episode](https://uwescience.github.io/SQL-geospatial-tutorial/05-mapping/) if needed.
  
