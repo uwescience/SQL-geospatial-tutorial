@@ -202,63 +202,63 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 # Joining two tables
 
 
-> _Which census tract has the highest crime rate?_
-> 
-> * Can we answer this question using the SeattleCrimeIncidentsTable?
-> 
-> To calculate the crime rate we need to have the population of each census tract. This is missing from the SeattleCrimeIncidents Table. However, in the database there is another table called census containing the population per tract. 
->
-> ~~~
-> SELECT * from census LIMIT 10
-> ~~~
-> {: .sql}
->
-> * What minimal database we need to answer the question?
-> a table with census 
->
-> | tract | #crimes/popuation |
-> | --- | --- |
-> |  |  |
-> 
-> * What is the common key on which we can join the two tables?
-> 
-> 
->
-> 
->
-> To simplify the join we can create the following two tables: 
->
-> * Table 1: 
->
-> | tract | crime_count |
-> | --- | --- |
-> | | |
->
-> ~~~
-> SELECT round("census tract 2000"),count(*) FROM seattlecrimeincidents
+ _Which census tract has the highest crime rate?_
+ 
+ * Can we answer this question using the SeattleCrimeIncidentsTable?
+ 
+To calculate the crime rate we need to have the population of each census tract. This is missing from the SeattleCrimeIncidents Table. However, in the database there is another table called census containing the population per tract. 
+
+ ~~~
+ SELECT * from census LIMIT 10
+ ~~~
+ {: .sql}
+
+ * What minimal database we need to answer the question?
+ a table with census 
+
+ | tract | #crimes/popuation |
+ | --- | --- |
+ |  |  |
+ 
+ * What is the common key on which we can join the two tables?
+ 
+ 
+
+ 
+
+To simplify the join we can create the following two tables: 
+
+ * Table 1: 
+
+ | tract | crime_count |
+ | --- | --- |
+ | | |
+
+ ~~~
+ SELECT round("census tract 2000"),count(*) FROM seattlecrimeincidents
 	group by "census tract 2000"
 	ORDER BY "census tract 2000" ASC;
->~~~
->{: .sql}
->
-> * Table 2: 
->
-> | tract | population |
-> | --- | --- |
-> | | |
->
-> ~~~
-> SELECT "Census Tract","Total Population, 2010" as population from census_data
+~~~
+{: .sql}
+
+ * Table 2: 
+
+ | tract | population |
+ | --- | --- |
+ | | |
+
+ ~~~
+ SELECT "Census Tract","Total Population, 2010" as population from census_data
 	ORDER BY "Census Tract" ASC;
-> ~~~
->{: .sql}
-> 
-> Then we can join them where the corresponding tracts are equal.
-> 
-> Hint: be careful about how division is performed in SQL. You might need to use a function which converts integers to floats (you can do this with `variable::float`)
+ ~~~
+{: .sql}
+ 
+ Then we can join them where the corresponding tracts are equal.
+ 
+ Hint: be careful about how division is performed in SQL. You might need to use a function which converts integers to floats (you can do this with `variable::float`)
 
 > ## Join with where command
-> 
+>
 >> ## Solution
 >> ~~~
 SELECT crimeTable.CT,cast(crimeTable.count as float)/censusTable.population as crime_rate from
