@@ -203,7 +203,7 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 
 
 >## _Which census tract has the highest crime rate?_
-{:. challenge}
+{: .challenge}
 
  * Can we answer this question using the SeattleCrimeIncidentsTable?
  
@@ -284,6 +284,6 @@ SELECT crimeTable.CT,cast(crimeTable.count as float)/censusTable.population as c
 > {: .solution}
 {: .challenge}
 
-> ## Which tract is which?
+>## Which tract is which?
 > Here is a useful [map](https://www.seattle.gov/Documents/Departments/CivilRights/map-seattle.pdf) of Seattle census tracts (2010). Can you create a similar map with your favorite tool and color each tract by the crime rate? You can check out the [Mapping episode](https://uwescience.github.io/SQL-geospatial-tutorial/05-mapping/) if needed.
- 
+ {: .challenge}
