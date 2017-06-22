@@ -1,7 +1,7 @@
 ---
 title: "Geospatial Queries"
-teaching: 10
-exercises: 20
+teaching: 15
+exercises: 30
 questions:
 - "What are the various ways that we can represent geospatial information?"
 - "How does a database store spatial information?"
