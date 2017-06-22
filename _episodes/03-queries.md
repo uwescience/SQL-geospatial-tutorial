@@ -229,8 +229,8 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 > To simplify the join we can create the following two tables: 
 >
 > * Table 1: 
-> tract | crime_count |
-> | tract   |      crime_count      |
+>
+> | tract | crime_count |
 > | --- | --- |
 > | | |
 >
@@ -242,6 +242,7 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 >{: .sql}
 >
 > * Table 2: 
+>
 > | tract | population |
 > | --- | --- |
 > | | |
