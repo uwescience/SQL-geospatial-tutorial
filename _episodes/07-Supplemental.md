@@ -1,5 +1,5 @@
 ---
-title: "Supplemental"
+title: "Advanced Geospatial Queries"
 teaching: 0
 exercises: 60
 questions:
