@@ -1,7 +1,7 @@
 ---
 title: "SQL Queries"
-teaching: 10
-exercises: 20
+teaching: 15
+exercises: 45
 questions:
 - "How do I extract information from a table in a database?"
 - "How can I create summary statistics of a data set?"
