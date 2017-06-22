@@ -285,5 +285,5 @@ SELECT crimeTable.CT,cast(crimeTable.count as float)/censusTable.population as c
 {: .challenge}
 
 > ## Which tract is which?
-> Here is a useful [map](https://www.seattle.gov/Documents/Departments/CivilRights/map-seattle.pdf) of Seattle cencus tracts (2010). Can you create a similar map with your favorite tool and color each tract by the crime rate. You can chech out the [Mapping episode](https://uwescience.github.io/SQL-geospatial-tutorial/05-mapping/) if needed.
+> Here is a useful [map](https://www.seattle.gov/Documents/Departments/CivilRights/map-seattle.pdf) of Seattle census tracts (2010). Can you create a similar map with your favorite tool and color each tract by the crime rate? You can check out the [Mapping episode](https://uwescience.github.io/SQL-geospatial-tutorial/05-mapping/) if needed.
  
