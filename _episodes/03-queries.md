@@ -216,9 +216,12 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 > * What minimal database we need to answer the question?
 > a table with census 
 >
-> tract | # crimes/ population
-> | tract   |      #crimes/popuation      |
-> |----------|:-------------:|
+> | tract | #crimes/popuation |
+> | --- | --- |
+
+| Name | Aliases | Description |
+| --- | --- | --- |
+|  boolean | bool | logical Boolean (true/false) |
 > 
 > * What is the common key on which we can join the two tables?
 > 
