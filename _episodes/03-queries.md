@@ -225,10 +225,10 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 > 
 >
 > 
-
+>
 > To simplify the join we can create the following two tables: 
-
-* Table 1: 
+>
+> * Table 1: 
 > tract | crime_count
 > | tract   |      crime_count      |
 > |----------|:-------------:|
@@ -239,8 +239,8 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 	ORDER BY "census tract 2000" ASC;
 >~~~
 >{: .sql}
-
-* Table 2: 
+>
+> * Table 2: 
 > | tract   |      population     |
 > |----------|:-------------:|
 >
