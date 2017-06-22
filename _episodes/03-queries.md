@@ -213,8 +213,7 @@ To calculate the crime rate we need to have the population of each census tract.
  ~~~
  {: .sql}
 
- * What minimal database we need to answer the question?
- a table with census 
+ * What minimal table we need to answer the question?
 
  | tract | #crimes/popuation |
  | --- | --- |
