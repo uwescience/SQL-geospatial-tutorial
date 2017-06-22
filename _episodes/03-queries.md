@@ -187,13 +187,6 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 > ~~~
 > {: .sql}
 
-
-> ~~~
-> SELECT "census tract 2000" as "CensusTract",count(*) as "crime_count" FROM seattlecrimeincidents
-	group by "census tract 2000";
-> ~~~
-> {: .sql}
-
 * extracting the max
 
 > ~~~
