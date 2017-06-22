@@ -202,8 +202,9 @@ Note: for homicide we see there are a lot of types of homicides -> use summarize
 # Joining two tables
 
 
- _Which census tract has the highest crime rate?_
- 
+>## _Which census tract has the highest crime rate?_
+{:. challenge}
+
  * Can we answer this question using the SeattleCrimeIncidentsTable?
  
 To calculate the crime rate we need to have the population of each census tract. This is missing from the SeattleCrimeIncidents Table. However, in the database there is another table called census containing the population per tract. 
