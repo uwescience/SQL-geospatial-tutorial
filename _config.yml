@@ -7,7 +7,7 @@ encoding: utf-8
 kind: "lesson"
 
 # Overall title for pages.
-title: "Introduction to SQL and Geospatial Data Processing (DSSG 2017)"
+title: "Introduction to SQL and Geospatial Data Processing"
 
 # Repository URL (without trailing slash).
 repo: https://github.com/uwescience/SQL-geospatial-tutorial
